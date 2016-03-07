@@ -27,7 +27,8 @@
     </head>
     <body ng-app="app" ng-controller="voteController">  
         
-        <!--<div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
+        <!-- 
+        <div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
         <h2>Rastauranger</h2>
         <div ng-repeat="restaurant in item.included">
             <span class="restaurant" ng-if="restaurant.type == 'restaurant'">
@@ -38,7 +39,8 @@
                     ({{ vote.relationships.user.data.id }})
                 </span>
             </span>
-        </div>-->
+        </div>
+        
         <div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
         <h2>Rastauranger</h2>
             <div ng-repeat="restaurant in included.restaurant">
@@ -52,14 +54,14 @@
             <div id="users" ng-repeat="user in included.user">
                     {{ user.attributes.name }}
             </div>
-        <!--
+        
         <span ng-if=" expireDate < displayDate">
             <p>RÖSTNING KLAR</p>
             {{ displayDate }}
            <br>
             {{ displayDate | date: 'yyyy-MM-dd HH:mm:ssZ' }}
         </span>
-        -->
+        
         <script>
             var app = angular.module('app', []);
             app.controller('voteController', function($scope, $http) {
@@ -88,5 +90,6 @@
                 });
             });
         </script>
+        -->
     </body>
 </html>
