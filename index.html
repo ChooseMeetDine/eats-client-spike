@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CMD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- LEAFLET -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+        
+        <!-- STYLESHEET -->
+        <link rel="stylesheet" type="text/css" href="css/layouts/style.css"> 
+        
+        <link rel="stylesheet" type="text/css" href="libs/bower/lib/bootstrap/dist/css/bootstrap.css">
+        <script src="libs/bower/lib/angular/angular.js"></script>
+        <script src="libs/bower/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <link rel="stylesheet" href="libs/bower/lib/font-awesome/css/font-awesome.css">
+        <script src="js/views/main.js"></script>
+        
+        
+        <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        
+    </head>
+    <body ng-app="app" >        
+        <div ng-controller="DropdownCtrl" id="navigation">
+            <!-- Single button using append-to-body -->
+            <div class="btn-group" uib-dropdown dropdown-append-to-body>
+              <button id="btn-append-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                <i class="fa fa-home fa-fw"></i>
+                Dropdown on Body <span class="caret"></span>
+              </button>
+              <ul uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+                <li role="menuitem"><a href="#">Action</a></li>
+                <li role="menuitem"><a href="#">Another action</a></li>
+                <li role="menuitem"><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li role="menuitem"><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <!-- Single button with keyboard nav -->
+            <div class="btn-group" uib-dropdown keyboard-nav>
+                <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                    <i class="fa fa-cog fa-fw"></i>
+                    Dropdown with keyboard navigation <span class="caret"></span>
+                </button>
+                <ul uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                    <li role="menuitem"><a href="#">Action</a></li>
+                    <li role="menuitem"><a href="#">Another action</a></li>
+                    <li role="menuitem"><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li role="menuitem"><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>    
+        
+        <div id="map">
+        </div>
+        
+        <script src='js/views/map.js'>
+        </script>
+       
+        
+    </body>
+</html>
