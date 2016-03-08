@@ -14,6 +14,9 @@ function onLocationError(e) {
 }
 
 map.on('locationerror', onLocationError);
+var marker = L.marker([55.7597, 13.0074]).addTo(map);
+marker.bindPopup("<b>LÖDDEKÖPINGE!</b>").openPopup();
+var marker = L.marker([57.916, 13.877]).addTo(map);
 
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
