@@ -20,10 +20,10 @@ var marker = L.marker([57.916, 13.877]).addTo(map);
 
 //costum marker with location
 var greenIcon = L.icon({
-    iconUrl: 'coffemarker.png',
+    iconUrl: 'marker-icon-red.png',
 
-    iconSize:     [40, 40], // size of the icon
-    iconAnchor:   [40, 42], // point of the icon which will correspond to marker's location
+    iconSize:     [25, 41], // size of the icon
+    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
 
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
