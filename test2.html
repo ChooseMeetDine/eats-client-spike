@@ -21,12 +21,118 @@
         
         <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+		
+	<!-- tillfällig JS -->
+	<script>
+	
+$(function(){
+
+	$('#slide-submenu').on('click',function() {			        
+        $(this).closest('.list-group').fadeOut('slide',function(){
+        	$('.mini-submenu').fadeIn();	
+        });
+        
+      });
+
+	$('.mini-submenu').on('click',function(){		
+        $(this).next('.list-group').toggle('slide');
+        $('.mini-submenu').hide();
+	})
+})
+
+
+
+	</script>	
+	
+	
+		
+		
     </head>
     <body>
-        <p>Do stuff</p>
-        
+        <p>hello</p>
+	
+		
+	<!-- FILTERMENU -->
+      	<div class="row">
+		<div class="col-sm-4 col-md-3 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active">
+           <p id="filterTitle"> <i class="fa fa-search"></i>  FILTERMENY
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span></p>
+		
+
+		
+		
+		<p class="filter-undertitle">		
+			<i class="fa fa-check-square-o"></i> Mattyp:		</p>
+		
+		<table style="width:100%">
+			<tr>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Alla mattyper</label></td>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Pizza</label></td>		
+			</tr>
+			<tr>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Italienskt</label></td>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Asiatiskt</label></td>		
+			</tr>
+			<tr>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Husmanskost</label></td>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Grekiskt</label></td>		
+			</tr>
+			<tr>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Sushi</label></td>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Vegetariskt</label></td>		
+			</tr>
+			<tr>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Indiskt</label></td>
+				<td><label class="checkbox-inline"><input type="checkbox" value="">Hamburgare</label></td>		
+			</tr>
+ 
+		</table>
+		
+		<p></p>
+		<p class="filter-undertitle">		<i class="fa fa-usd"></i> Prisklass:		</p>	
+
+
+		<p class="filter-undertitle">		<i class="fa fa-star"></i> Betyg:		</p>	
+		<div class="star-rating"> 
+			<span class="fa fa-star" data-rating="1"></span>
+			<span class="fa fa-star" data-rating="2"></span>
+			<span class="fa fa-star" data-rating="3"></span>
+			<span class="fa fa-star-o" data-rating="4"></span>
+			<span class="fa fa-star-o" data-rating="5"></span>
+		</div>
+		
+        </span>
+
+		
+
+
+		 
+	
+      
+    </div>        
+		</div>
+		</div>
+
+		
+		
         <div id="map">
         </div>
         
         <script src="js/views/map.js"></script>
+        
+
+        
+		
+		
+		
+        
     </body>
