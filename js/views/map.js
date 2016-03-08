@@ -12,11 +12,21 @@ map.on('locationfound', onLocationFound);
 function onLocationError(e) {
     alert(e.message);
 }
-
+//test marker and popup
 map.on('locationerror', onLocationError);
 var marker = L.marker([55.7597, 13.0074]).addTo(map);
 marker.bindPopup("<b>LÖDDEKÖPINGE!</b>").openPopup();
 var marker = L.marker([57.916, 13.877]).addTo(map);
+
+//costum marker with location
+var greenIcon = L.icon({
+    iconUrl: 'cafe-512-300x300.png',
+
+    iconSize:     [40, 40], // size of the icon
+    iconAnchor:   [40, 42], // point of the icon which will correspond to marker's location
+});
+
+L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
