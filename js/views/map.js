@@ -26,7 +26,17 @@ var greenIcon = L.icon({
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
 
-L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
+    // create popup contents
+    var customPopup = "Jespersgatan 14C<br/><button>Lägg till!</button>";
+    
+    // specify popup options 
+    var customOptions =
+        {
+        'maxWidth': '500',
+        'className' : 'custom'
+        }
+
+L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup(customPopup,customOptions).addTo(map);
 
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
