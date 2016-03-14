@@ -10,17 +10,24 @@
             voteMap.vote = [];
             voteMap.group = [];
 
-        $http.get("json/get_vote.json").success(function(response) {
-            $scope.item = response;
-            var items = response.included;
+        $http({
+            methos: 'GET', 
+            url:"js/json/get_vote.json"
+        }).then(function successCallback(response) {
+            $scope.item = response.data;
+            var items = response.data.included;
+            console.log(items);
+            console.log(response);
 
             for(i = 0; i < items.length; i++){
                 voteMap[items[i].type].push(items[i]);
             }
-
+            
             $scope.included = voteMap;
-
-            var expire = response.data.attributes.expires;
+            var expire = response.data.data.attributes.expires;
             $scope.expireDate = new Date(expire).getTime();
+        
+        }, function errorCallback(response) {
+            console.log("shit happend");
         });
     });

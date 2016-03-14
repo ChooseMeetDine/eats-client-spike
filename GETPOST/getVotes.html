@@ -9,7 +9,7 @@
         <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
         
         <!-- STYLESHEET -->
-        <link rel="stylesheet" type="text/css" href="css/layouts/style.css"> 
+        <link rel="stylesheet" type="text/css" href="../css/layouts/style.css"> 
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../libs/bower/lib/bootstrap/dist/css/bootstrap.css">
@@ -24,22 +24,9 @@
 
         <!--GET API SCRIPT -->
         <script src="js/get.js"></script>
-
+s
     </head>
     <body ng-app="app" ng-controller="getData">  
-        <!--
-        <div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
-        <h2>Rastauranger</h2>
-        <div ng-repeat="restaurant in item.included">
-            <span class="restaurant" ng-if="restaurant.type == 'restaurant'">
-                {{ restaurant.attributes.name }}
-            </span>
-            <span class="votes" ng-repeat="vote in item.included">
-                <span ng-if="vote.relationships.restaurant.data.id == restaurant.id">
-                    ({{ vote.relationships.user.data.id }})
-                </span>
-            </span>
-        </div>
         
         <div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
         <h2>Rastauranger</h2>
@@ -61,6 +48,6 @@
            <br>
             {{ displayDate | date: 'yyyy-MM-dd HH:mm:ssZ' }}
         </span>
-        -->
+    
     </body>
 </html>
