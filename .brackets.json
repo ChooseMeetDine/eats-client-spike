@@ -2,6 +2,7 @@
     "jscodehints.detectedExclusions": [
         "C:/wampserver/www/CMD/libs/bower/lib/jquery/src/traversing/var/dir.js",
         "C:/wampserver/www/CMD/libs/bower/lib/jquery/src/traversing/../selector.js",
-        "C:/wampserver/www/CMD/libs/bower/lib/jquery/src/queue.js"
+        "C:/wampserver/www/CMD/libs/bower/lib/jquery/src/queue.js",
+        "C:/wampserver/www/eats-client-spike/libs/bower/lib/jquery/src/manipulation/setGlobalEval.js"
     ]
 }

@@ -57,7 +57,6 @@ font-weight: bold;
 }
 
 .mini-submenu{
-  display:none;  
   background-color: rgba(0, 0, 0, 0);  
   border: 1px solid rgba(0, 0, 0, 0.9);
   border-radius: 4px;
@@ -75,6 +74,7 @@ right: 1px;
 
 .list-group{
   width: 300px;
+    display:none;
 }
 
 

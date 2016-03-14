@@ -22,12 +22,12 @@
         <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
-        
-        
+        <!--GET API SCRIPT -->
+        <script src="js/controllers/get.js"></script>
+
     </head>
-    <body ng-app="app" ng-controller="voteController">  
-        
-        <!-- 
+    <body ng-app="app" ng-controller="getData">  
+        <!--
         <div id="group"><h1>Röstningsnamn: {{ item.data.attributes.name }}</h1></div>
         <h2>Rastauranger</h2>
         <div ng-repeat="restaurant in item.included">
@@ -61,35 +61,7 @@
            <br>
             {{ displayDate | date: 'yyyy-MM-dd HH:mm:ssZ' }}
         </span>
-        
-        <script>
-            var app = angular.module('app', []);
-            app.controller('voteController', function($scope, $http) {
-                
-                var currentDate = new Date();
-                $scope.displayDate = currentDate.getTime();
-                
-                var voteMap = {};
-                    voteMap.user = [];
-                    voteMap.restaurant = [];
-                    voteMap.vote = [];
-                    voteMap.group = [];
-                
-                $http.get("get_vote.json").success(function(response) {
-                    $scope.item = response;
-                    var items = response.included;
-                
-                    for(i = 0; i < items.length; i++){
-                        voteMap[items[i].type].push(items[i]);
-                    }
-                    
-                    $scope.included = voteMap;
-                    
-                    var expire = response.data.attributes.expires;
-                    $scope.expireDate = new Date(expire).getTime();
-                });
-            });
-        </script>
         -->
+
     </body>
 </html>
