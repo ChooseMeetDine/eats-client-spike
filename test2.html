@@ -17,6 +17,7 @@
         <script src="libs/bower/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <link rel="stylesheet" href="libs/bower/lib/font-awesome/css/font-awesome.css">
         <script src="js/views/main.js"></script>
+	
         
         
         <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
@@ -26,6 +27,12 @@
 	<script>
 	
 $(function(){
+$('.mini-submenu').on('click',function(){		
+        $(this).next('.list-group').toggle('slide');
+        $('.mini-submenu').hide();
+	})
+
+
 
 	$('#slide-submenu').on('click',function() {			        
         $(this).closest('.list-group').fadeOut('slide',function(){
@@ -34,31 +41,36 @@ $(function(){
         
       });
 
-	$('.mini-submenu').on('click',function(){		
-        $(this).next('.list-group').toggle('slide');
-        $('.mini-submenu').hide();
-	})
+	
 })
-
-
 
 	</script>	
 	
-	
-		
+
+<link rel="stylesheet" href="jquery.range.css">
+<script src="jquery.range.js"></script>
 		
     </head>
     <body>
         <p>hello</p>
+	<!-- MENU -->
 	
+	<div id="menu">
+
+
+
+	</div>
+	
+	
+	
+	<div id="filterMenu">
 		
 	<!-- FILTERMENU -->
       	<div class="row">
 		<div class="col-sm-4 col-md-3 sidebar">
     <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="fa fa-sort"></span>
+
     </div>
     <div class="list-group">
         <span href="#" class="list-group-item active">
@@ -100,6 +112,8 @@ $(function(){
 		<p></p>
 		<p class="filter-undertitle">		<i class="fa fa-usd"></i> Prisklass:		</p>	
 
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+
 
 		<p class="filter-undertitle">		<i class="fa fa-star"></i> Betyg:		</p>	
 		<div class="star-rating"> 
@@ -121,7 +135,7 @@ $(function(){
     </div>        
 		</div>
 		</div>
-
+</div>
 		
 		
         <div id="map">
