@@ -12,6 +12,9 @@ map.on('locationfound', onLocationFound);
 function onLocationError(e) {
     alert(e.message);
 }
+
+
+
 //test marker and popup
 map.on('locationerror', onLocationError);
 var marker = L.marker([55.7597, 13.0074]).addTo(map);
@@ -37,6 +40,7 @@ var greenIcon = L.icon({
         }
 
 L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup(customPopup,customOptions).addTo(map);
+
 
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
