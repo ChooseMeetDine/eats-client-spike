@@ -9,7 +9,7 @@
 			"name": "Bamboo City",
 			"info": " Här kan du njuta av Thaibuffé, Kinabuffé, Sushi och Mongolian barbeque. Vi erbjuder en mycket hög kvalitet i våra bufféer i härliga lokaler. Vi serverar både lunch och a la carte.",
 			"photo": "http://photo.com/1234.jpg",
-			"price-rate": 3,
+			"pricerate": 3,
 			"rating": 4,
 			"number_votes": 27,
 			"number_won_votes": 3,
@@ -38,7 +38,7 @@
 			"name": "Green Mango",
 			"info": "Helt ovanligt thai restaurant",
 			"photo": "http://photo.com/2345.jpg",
-			"price-rate": 3,
+			"pricerate": 3,
 			"rating": 3,
 			"number_votes": 15,
 			"number_won_votes": 2,
@@ -67,7 +67,7 @@
 			"name": "Krua Thai",
 			"info": "Helt vanligt thai restaurant",
 			"photo": "http://photo.com/2345.jpg",
-			"price-rate": 3,
+			"pricerate": 3,
 			"rating": 3,
 			"number_votes": 15,
 			"number_won_votes": 2,
@@ -96,7 +96,59 @@
 			"name": "Veggie Garden",
 			"info": "Black magic veggie food for hipsters",
 			"photo": "http://photo.com/2345.jpg",
-			"price-rate": 3,
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0075773,
+			"latitude": 55.604307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_4"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_5",
+		"attributes": {
+			"name": "Veggie Garden 2",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0079773,
+			"latitude": 55.601307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_5"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_6",
+		"attributes": {
+			"name": "Veggie Garden 3",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
 			"rating": 5,
 			"number_votes": 23,
 			"number_won_votes": 4,
@@ -113,7 +165,111 @@
 			}
 		},
 		"links": {
-			"self": "/restaurants/RESTAURANT_ID_4"
+			"self": "/restaurants/RESTAURANT_ID_6"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_7",
+		"attributes": {
+			"name": "Veggie Garden lol",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0079773,
+			"latitude": 55.604307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_7"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_8",
+		"attributes": {
+			"name": "Veggie Garden 2",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0079773,
+			"latitude": 55.601307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_8"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_9",
+		"attributes": {
+			"name": "Veggie Garden 3",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0079773,
+			"latitude": 55.604307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_9"
+		}
+	}, {
+		"type": "restaurant",
+		"id": "RESTAURANT_ID_10",
+		"attributes": {
+			"name": "Veggie Garden lol",
+			"info": "Black magic veggie food for hipsters",
+			"photo": "http://photo.com/2345.jpg",
+			"pricerate": 3,
+			"rating": 5,
+			"number_votes": 23,
+			"number_won_votes": 4,
+			"longitude": 13.0079773,
+			"latitude": 55.604307,
+			"temporary": false
+		},
+		"relationships": {
+			"category": {
+				"data": [{
+					"type": "category",
+					"id": "CATEGORY_ID_3"
+				}]
+			}
+		},
+		"links": {
+			"self": "/restaurants/RESTAURANT_ID_10"
 		}
 	}],
 	"included": [

@@ -3,6 +3,7 @@ html, body{
 }
 #map{
     height:93%;
+    z-index:0;
 }
 #navigation{
     height:7%;
