@@ -4,7 +4,9 @@ html,body {
 
 #map {
     height: 98%;
-    top: 10px;
+    top: 43px;
+
+
 }
 
 #navigation {
@@ -43,23 +45,50 @@ html,body {
     top: 90px;
     left: 10px;
 }
-<<<<<<< HEAD
 
 .vote {
     color: red;
 }
-=======
-    
->>>>>>> 2426686180b68c4ec9ddd4761427bb8d8bd94ad1
+
+
+
+
+#filterMenu {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+#menu {
+    position: absolute;
+    top: 1px;
+
+}
 
 
 #filterTitle {
     font-size: 18px;
 }
 
-
 .filter-undertitle {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.menu-undertitle {
     font-weight: 700;
+    padding: 10px;
+    background: #b3b2b2;
+    color: #FFF;
+}
+
+table {
+    margin: 10px;
+}
+
+#price-max {
+    margin: 10px;
+    width: 280px;
 }
 
 .mini-submenu {
@@ -70,22 +99,55 @@ html,body {
     position: relative;
     width: 42px;
     text-align: center;
-font-size: 20px;
+    font-size: 20px;
+
 }
 
-#filterMenu {
-    position: absolute;
-    top: 1px;
-    right: 1px;
+
+.mini-submenu-menu {
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 20px;
+    padding: 5px;
+    position: relative; 
+    width: 42px;
+    text-align: center;
+    font-size: 20px;
+	left: 4px;
 }
 
 
 .list-group {
     width: 300px;
     display: none;
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+opacity: 0.9;
+}
+
+.list-group-menu {
+    width: 300px;
+    display: none;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+opacity: 0.9;
 }
 
 .mini-submenu:hover {
+    cursor: pointer;
+}
+
+.mini-submenu-menu:hover {
     cursor: pointer;
 }
 
@@ -97,11 +159,22 @@ font-size: 20px;
     margin-top: 3px;
 }
 
+
 .mini-submenu .icon-bar {
     background-color: #000;
 }
 
+
+
 #slide-submenu {
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#slide-submenu-menu {
     background: rgba(0,0,0,0.45);
     display: inline-block;
     padding: 0 8px;
@@ -113,4 +186,6 @@ font-size: 20px;
     line-height: 32px;
     font-size: 2em;
     cursor: pointer;
+    padding: 10px;
+    margin: 10px;
 }
