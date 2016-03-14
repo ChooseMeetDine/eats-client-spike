@@ -10,7 +10,7 @@
             voteMap.vote = [];
             voteMap.group = [];
 
-        $http.get("get_vote.json").success(function(response) {
+        $http.get("json/get_vote.json").success(function(response) {
             $scope.item = response;
             var items = response.included;
 
