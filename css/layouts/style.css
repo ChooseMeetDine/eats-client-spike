@@ -4,8 +4,7 @@ html,body {
 
 #map {
     height: 98%;
-    top: 43px;
-
+    top: 1px;
 
 }
 
@@ -50,9 +49,6 @@ html,body {
     color: red;
 }
 
-
-
-
 #filterMenu {
     position: absolute;
     top: 1px;
@@ -62,9 +58,7 @@ html,body {
 #menu {
     position: absolute;
     top: 1px;
-
 }
-
 
 #filterTitle {
     font-size: 18px;
@@ -76,10 +70,11 @@ html,body {
 }
 
 .menu-undertitle {
-    font-weight: 700;
     padding: 10px;
     background: #b3b2b2;
     color: #FFF;
+    font-size: 18px;
+    padding: 10px;
 }
 
 table {
@@ -93,29 +88,27 @@ table {
 
 .mini-submenu {
     background-color: rgba(0,0,0,0);
-    border: 1px solid rgba(0,0,0,0.9);
     border-radius: 20px;
     padding: 5px;
     position: relative;
     width: 42px;
     text-align: center;
     font-size: 20px;
-
+right: 40px;
+z-index:1;
 }
-
 
 .mini-submenu-menu {
     background-color: rgba(0,0,0,0);
-    border: 1px solid rgba(0,0,0,0.9);
     border-radius: 20px;
     padding: 5px;
-    position: relative; 
+    position: absolute;
     width: 42px;
     text-align: center;
     font-size: 20px;
-	left: 4px;
+    left: 4px; 
+z-index:1;
 }
-
 
 .list-group {
     width: 300px;
@@ -127,21 +120,25 @@ table {
     background-color: #FFF;
     border: 1px solid rgba(0,0,0,0.9);
     border-radius: 4px;
-opacity: 0.9;
+    height: 950px;
+
 }
 
 .list-group-menu {
     width: 300px;
     display: none;
-    position: absolute;
+    position: relative;
     top: 1px;
     left: 2px;
     z-index: 99;
     background-color: #FFF;
     border: 1px solid rgba(0,0,0,0.9);
     border-radius: 4px;
-opacity: 0.9;
+    height: 950px;
 }
+
+
+
 
 .mini-submenu:hover {
     cursor: pointer;
@@ -149,6 +146,7 @@ opacity: 0.9;
 
 .mini-submenu-menu:hover {
     cursor: pointer;
+
 }
 
 .mini-submenu .icon-bar {
@@ -159,12 +157,9 @@ opacity: 0.9;
     margin-top: 3px;
 }
 
-
 .mini-submenu .icon-bar {
     background-color: #000;
 }
-
-
 
 #slide-submenu {
     background: rgba(0,0,0,0.45);
@@ -172,6 +167,7 @@ opacity: 0.9;
     padding: 0 8px;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 #slide-submenu-menu {
@@ -189,3 +185,38 @@ opacity: 0.9;
     padding: 10px;
     margin: 10px;
 }
+
+.btn-group {
+    padding: 10px;
+
+}
+
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+
