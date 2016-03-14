@@ -1,8 +1,13 @@
  var app = angular.module('app', []);
-    app.controller('getData', function($scope, $http) {
+    app.controller('getRestaurants', function($scope, $http) {
+    var voteMap = {};
+        voteMap.user = [];
+        voteMap.restaurant = [];
+        voteMap.vote = [];
+        voteMap.group = [];
     
-        $http.get("json/restaurants.json").success(function(response) {
-            $scope.item = response;
-            var items = response.included;
-        });
+    $http.get("js/json/restaurants.json").success(function(response) {
+        $scope.item = response;
+        var items = response.included;
     });
+});
