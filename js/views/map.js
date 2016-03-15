@@ -36,19 +36,3 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'wiigolas.p7idlkkp',
     accessToken: 'pk.eyJ1Ijoid2lpZ29sYXMiLCJhIjoiY2lreHYxejNvMDA0NndsbTRmejl4NndqMSJ9.5hfLbJnXbAsfsPRT3V4W4Q'
 }).addTo(map);
-
-/*
-$.getJSON('js/restaurants.json', function (json) {
-    var restaurang = [];
-    for (var key in json) {
-        if (json.hasOwnProperty(key)) {   
-                var item = json[key];
-            var info = "<p>Namn: " + item.name + "</p><p>Betyg: " + item.rating + "/5</p><button ng-click='count = count + 1' ng-init='count=0'>Rösta</button>";
-                marker = new L.marker([item.lat,item.long])
-                    .bindPopup(info)
-                    .addTo(map);
-        } 
-    }  
-});
-
-*/
