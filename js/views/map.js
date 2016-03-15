@@ -2,6 +2,8 @@ var map = L.map('map', { zoomControl: false }).locate({setView: true, maxZoom: 1
 
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
+new L.control.locate({position: 'bottomleft'}).addTo(map);
+
 function onLocationFound(e) {
     var radius = e.accuracy;
 
