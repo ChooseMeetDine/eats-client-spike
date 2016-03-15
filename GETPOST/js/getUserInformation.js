@@ -1,5 +1,4 @@
-var app = angular.module('app', []);
-    app.controller('getUserInformation', function($scope, $http) {
+app.controller('getUserInformation', function($scope, $http) {
     $http({
       method: 'GET',
       url: 'js/json/userinformation.json'

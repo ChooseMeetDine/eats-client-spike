@@ -1,5 +1,4 @@
- var app = angular.module('app', []);
-    app.controller('getData', function($scope, $http) {
+app.controller('getVotes', function($scope, $http) {
 
         var currentDate = new Date();
         $scope.displayDate = currentDate.getTime();

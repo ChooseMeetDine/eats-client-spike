@@ -23,17 +23,32 @@
         <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
         <!--REGISTER USER API SCRIPT -->
-        <script src="js/registerUser.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/loginUser.js"></script>
+        <script src="js/regUser.js"></script>
 
     </head>
-    <body ng-app="app" ng-controller="registerUser">  
-        <form ng-submit="submit()">
+    <body ng-app="app">  
+        <h1>LOG IN</h1>
+        <form ng-controller="loginUser" ng-submit="loginUser()">
             <input type="text" ng-model="email" name="email"> Email
             <br>
             <input type="text" ng-model="password" name="password"> Password
             <br>
+            <input type="submit" id="submit" value="Logga in">
+        </form>
+        <span>{{ loginUser }}</span>
+        <h1>REGISTER USER</h1>
+        
+        <form ng-controller="regUser" ng-submit="regUser()">
+            <input type="text" ng-model="name" name="name"> Name
+            <br>
+            <input type="text" ng-model="regEmail" name="regEmail"> Email
+            <br>
+            <input type="text" ng-model="regPass" name="regPass"> Password
+            <br>
             <input type="submit" id="submit" value="Registrera">
         </form>
-        <span>{{ submitted }}</span>
+        <span>{{ regUser }}</span>
     </body>
 </html>

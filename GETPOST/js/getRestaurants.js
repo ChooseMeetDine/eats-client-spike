@@ -1,5 +1,4 @@
-var app = angular.module('app', ['ui.bootstrap']);
-    app.controller('getRestaurants', function($scope, $http, $compile) {
+app.controller('getRestaurants', function($scope, $http) {
       
     var start = new Date().getTime();
     var restaurantResult = {};    
