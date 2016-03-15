@@ -1,57 +1,171 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CMD</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <!-- LEAFLET -->
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-        
-        <!-- STYLESHEET -->
-        <link rel="stylesheet" type="text/css" href="css/layouts/style.css">
-        
-          
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="libs/bower/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        
-        <link rel="stylesheet" type="text/css" href="libs/bower/lib/bootstrap/dist/css/bootstrap.css">
-        <script src="libs/bower/lib/angular/angular.js"></script>
-        <script src="libs/bower/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <link rel="stylesheet" href="libs/bower/lib/font-awesome/css/font-awesome.css">
-        <script src="js/views/main.js"></script>
-        
-        
-        <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
-        <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
-		
-	<!-- tillfällig JS -->
-	<script>
-	
-$(function(){
+    <title>CMD</title>
+    <meta charset="UTF-8">
+    <meta content=
+    "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    name="viewport">
+    <!-- LEAFLET -->
+    <link href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" rel=
+    "stylesheet">
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js">
+    </script>
+    
+    <!-- STYLESHEET -->
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/layouts/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/layouts/reset.css">
 
-	$('#slide-submenu').on('click',function() {			        
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+    </script>
+    <script src="libs/bower/lib/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <link href="libs/bower/lib/bootstrap/dist/css/bootstrap.css" rel=
+    "stylesheet" type="text/css">
+    <script src="libs/bower/lib/angular/angular.js">
+    </script>
+    
+        <!-- STYLESHEET/SCRIPT FÖR LOGIN -->
+    <script src="js/views/main.js"></script>
+	<script src="/js/views/modernizr.js"></script>
+        
+        <!-- MAPBOX/FONT-AWESOME -->
+    <script src="libs/bower/lib/angular-bootstrap/ui-bootstrap-tpls.js">
+    </script>
+    <link href="libs/bower/lib/font-awesome/css/font-awesome.css" rel=
+    "stylesheet">
+    <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'>
+    </script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel=
+    'stylesheet'>
+    <!-- tillfällig JS -->
+
+    <script>
+
+    $(function(){
+
+    $('#slide-submenu').on('click',function() {                 
         $(this).closest('.list-group').fadeOut('slide',function(){
-        	$('.mini-submenu').fadeIn();	
+            $('.mini-submenu').fadeIn();    
         });
         
       });
 
-	$('.mini-submenu').on('click',function(){		
+    $('.mini-submenu').on('click',function(){       
         $(this).next('.list-group').toggle('slide');
         $('.mini-submenu').hide();
-	})
-})
+    })
+    })
 
 
 
-	</script>	
-	
-	
-		
-		
-    </head>
+    </script>
+</head>
     <body>
+    
+<!-- LOGGA IN/ REGISTRERA FORMULÄR -->
+    
+		<div class="SignIn">
+
+				<!-- inser more links here -->
+			<a class="cd-signin" href="#0">Sign in</a></li>
+
+		</div>
+
+
+<!-- MODAL POPUP -->
+	<div class="cd-user-modal"> 
+	<!-- this is the container wrapper -->
+		<div class="cd-user-modal-container"> 
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+			</ul>
+<!-- LOGGA IN FORMULÄR -->
+			<div id="cd-login"> 
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+				</form>
+								
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+			</div> 
+
+			<div id="cd-signup"> 
+			
+			<!-- REGISTRERA FORMULÄR -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+
+					</p>
+
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+			</div> 
+
+			<div id="cd-reset-password"> 
+			
+			<!-- GLÖMT LÖSENORD FOMULÄR -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div>
+    
     <!-- GENVÄGSKNAPP TILL PROFILSIDAN -->
  
         <a href="#aboutModal" data-toggle="modal" data-target="#profilsida"><button type="button" class="btn btn-danger btn-circle btn-xl"><i class="glyphicon glyphicon-user"></i></button> </a>
@@ -71,7 +185,10 @@ $(function(){
                         gustavsvenssonn@gmail.com</p>
                     <p class="text-center"><strong>Mobilnummer: </strong><br>
                         0738097421</p>
-                    <br>                    
+                    <br>
+                    <button type="button" class="btn btn-default" >Redigera</button>
+                    </center>
+                    <br>                                         
                     </center>
                 </div>
                 <div class="modal-footer">
@@ -83,7 +200,9 @@ $(function(){
         </div>
     </div>
 		
-	<!-- FILTERMENU -->
+	
+         
+         <!-- FILTERMENU -->
       	<div class="row">
 		<div class="col-sm-4 col-md-3 sidebar">
     <div class="mini-submenu">
