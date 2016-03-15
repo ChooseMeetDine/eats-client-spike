@@ -1,17 +1,26 @@
-var app = angular.module('app', []);
-    app.controller('getRestaurants', function($scope, $http) {
+var app = angular.module('app', ['ui.bootstrap']);
+    app.controller('getRestaurants', function($scope, $http, $compile) {
+      
     var start = new Date().getTime();
     var restaurantResult = {};    
-    $http({
-      method: 'GET',
-      url: 'js/json/restaurants.json'
-    }).then(function successCallback(response) {
-        result(response.data);
-    }, function errorCallback(response) {
-       console.log("error");
-    });
+    var link = 'js/json/restaurants.json';
+    
+    
+    getRestaurant(link);
+    
+    function getRestaurant(url){
+        var link = url;
+        $http({
+          method: 'GET',
+          url: link
+        }).then(function successCallback(response) {
+            resultRestaurant(response.data);
+        }, function errorCallback(response) {
+           console.log("error");
+        });
+    }
         
-    function result(resultData){
+    function resultRestaurant(resultData){
         var items = resultData.data;
         for(var k in items){
             var restaurant = items[k];
@@ -32,7 +41,9 @@ var app = angular.module('app', []);
             var id = restaurant.id;
             restaurantResult[id] = restaurantData;
         }
-         placeMarker(restaurantResult);
+        
+        placeMarker(restaurantResult);
+        
         var end = new Date().getTime();
         var time = end - start;
         console.log("Exec time = " + time);

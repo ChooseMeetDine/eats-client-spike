@@ -4,7 +4,7 @@
         <title>CMD</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <!-- LEAFLET -->
+         <!-- LEAFLET -->
         <link rel="stylesheet" href="../libs/bower/lib/leaflet/dist/leaflet.css">
         <script src="../libs/bower/lib/leaflet/dist/leaflet.js"></script>
         
@@ -21,18 +21,19 @@
         
         <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
-        
-        <link rel="stylesheet" type="text/css" href="css/star.css"> 
-        <script src="js/star.js"></script>
 
-	
-		
-		
+        <!--REGISTER USER API SCRIPT -->
+        <script src="js/registerUser.js"></script>
+
     </head>
-    <body ng-app="app" ng-controller="getRestaurants">        
-        <div  id="map"></div>
-        <script src="../js/views/map.js"></script>
-        <script src="js/getRestaurants.js"></script>
-        
+    <body ng-app="app" ng-controller="registerUser">  
+        <form ng-submit="submit()">
+            <input type="text" ng-model="email" name="email"> Email
+            <br>
+            <input type="text" ng-model="password" name="password"> Password
+            <br>
+            <input type="submit" id="submit" value="Registrera">
+        </form>
+        <span>{{ submitted }}</span>
     </body>
 </html>
