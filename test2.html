@@ -67,6 +67,37 @@
 		<script src="jquery.range.js"></script>
 	</head>
 	<body>
+	
+	
+		                 <!-- Modal - Profilsida i popup-fönster -->
+    <div class="modal fade" id="profilsida" tabindex="-1" role="dialog" aria-labelledby="profilsidaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <center>
+                    <img src="images/profile.jpeg" name="profilsida" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading">Gustav Svensson <small>Malmö</small></h3>
+                    <hr>
+                    <center>
+                    <p class="text-center"><strong>Email: </strong><br>
+                        gustavsvenssonn@gmail.com</p>
+                    <p class="text-center"><strong>Mobilnummer: </strong><br>
+                        0738097421</p>
+                    <br>
+                    <button type="button" class="btn btn-default" >Redigera</button>
+                    </center>
+                    <br>                                         
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tillbaka till kartan</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+	
 		<!-- MENU -->
 		<div id="menu">
 			<div class="row-menu">
@@ -77,7 +108,9 @@
 					<span href="#" class="list-group-item active"><i class="fa fa-picture-o"></i> Användarnamn
 					   <span class="pull-right" id="slide-submenu-menu"><i class="fa fa-times"></i></span>
 					</span>
-					<a href="#" class="list-group-item"><i class="fa fa-picture-o"></i> Min profil </a>
+            <a href="#aboutModal" data-toggle="modal" data-target="#profilsida" class="list-group-item">
+				<i class="fa fa-picture-o"></i> Min profil
+			</a>
 					<a href="#" class="list-group-item"><i class="fa fa-cog"></i> Inställningar </a>
 					
                     <p class="menu-undertitle">		Grupper		</p>
