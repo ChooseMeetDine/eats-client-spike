@@ -1,9 +1,9 @@
-var map = L.map('map').locate({setView: true, maxZoom: 13});
+var map = L.map('map',{ zoomControl: false }).locate({setView: true, maxZoom: 13});
 
 function onLocationFound(e) {
     var radius = e.accuracy;
 
-    L.marker(e.latlng).addTo(map);
+    L.marker(e.latlng).bindPopup("You're fucking here").addTo(map);
 
     }   
 
@@ -19,12 +19,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1Ijoid2lpZ29sYXMiLCJhIjoiY2lreHYxejNvMDA0NndsbTRmejl4NndqMSJ9.5hfLbJnXbAsfsPRT3V4W4Q'
 }).addTo(map);
 
-
 function placeMarker(json) {
     console.log(json);
-    for (var key in json) {   
+    for (var key in json) { 
         var item = json[key];
-        var info = item.name;
+        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '">';
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };
