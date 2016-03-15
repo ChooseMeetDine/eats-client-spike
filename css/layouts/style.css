@@ -1,11 +1,10 @@
 html,body {
     height: 100%;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 #map {
     height: 100%;
-    z-index: 0;
 }
 
 #navigation {
@@ -45,24 +44,8 @@ html,body {
     left: 10px;
 }
 
-#filterTitle {
-    font-size: 18px;
-}
-
-.filter-undertitle {
-    font-weight: 700;
-}
-
-.mini-submenu {
-    background-color: rgba(0,0,0,0);
-    border: 1px solid rgba(0,0,0,0.9);
-    border-radius: 20px;
-    padding: 5px;
-    position: relative;
-    width: 42px;
-    text-align: center;
-    font-size: 20px;
-    z-index: 1;
+.vote {
+    color: red;
 }
 
 #filterMenu {
@@ -71,13 +54,98 @@ html,body {
     right: 1px;
 }
 
+#menu {
+    position: absolute;
+    top: 1px;
+}
+
+#filterTitle {
+    font-size: 18px;
+}
+
+.filter-undertitle {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.menu-undertitle {
+    padding: 10px;
+    background: #b3b2b2;
+    color: #FFF;
+    font-size: 18px;
+    padding: 10px;
+}
+
+table {
+    margin: 10px;
+}
+
+#price-max {
+    margin: 10px;
+    width: 280px;
+}
+
+.mini-submenu {
+    background-color: rgba(0,0,0,0);
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+    width: 42px;
+    text-align: center;
+    font-size: 20px;
+right: 40px;
+z-index:1;
+}
+
+.mini-submenu-menu {
+    background-color: rgba(0,0,0,0);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    width: 42px;
+    text-align: center;
+    font-size: 20px;
+    left: 4px; 
+z-index:1;
+}
+
 .list-group {
     width: 300px;
     display: none;
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 950px;
+
 }
+
+.list-group-menu {
+    width: 300px;
+    display: none;
+    position: relative;
+    top: 1px;
+    left: 2px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 950px;
+}
+
+
+
 
 .mini-submenu:hover {
     cursor: pointer;
+}
+
+.mini-submenu-menu:hover {
+    cursor: pointer;
+
 }
 
 .mini-submenu .icon-bar {
@@ -98,26 +166,56 @@ html,body {
     padding: 0 8px;
     border-radius: 4px;
     cursor: pointer;
+
+}
+
+#slide-submenu-menu {
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .star-rating {
     line-height: 32px;
     font-size: 2em;
     cursor: pointer;
+    padding: 10px;
+    margin: 10px;
 }
 
-#createVotingButton {
-    background: none;
-    border-radius:50%;
-    border-color: white;
-    border-width: thick;
-    color: white;
-    z-index: 1;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.btn-group {
+    padding: 10px;
+
 }
 
-#createVotingButton:hover {
-    opacity: 0.7;
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
 }
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+
