@@ -4,7 +4,7 @@ html,body {
 }
 
 #map {
-    height: 900%;
+    height: 100%;
     z-index: 0;
 }
 
