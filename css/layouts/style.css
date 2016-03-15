@@ -1,92 +1,18 @@
+/*HTML*/
 html,body {
     height: 100%;
     overflow-x: hidden;
 }
-
+/*Map*/
 #map {
     height: 100%;
     z-index: 0;
 }
 
-#navigation {
-    height: 7%;
-}
-
-/*Directions*/
-#inputs,#errors,#directions {
-    position: absolute;
-    width: 33.3333%;
-    max-width: 300px;
-    min-width: 200px;
-}
-
-#inputs {
-    z-index: 10;
-    top: 10px;
-    left: 10px;
-}
-
-#directions {
-    z-index: 99;
-    background: rgba(0,0,0,.8);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-}
-
-#errors {
-    z-index: 8;
-    opacity: 0;
-    padding: 10px;
-    border-radius: 0 0 3px 3px;
-    background: rgba(0,0,0,.25);
-    top: 90px;
-    left: 10px;
-}
-
-.vote {
-    color: red;
-}
-
-#filterMenu {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-}
-
-#menu {
-    position: absolute;
-    top: 1px;
-}
-
-#filterTitle {
-    font-size: 18px;
-}
-
-.filter-undertitle {
-    font-size: 18px;
-    padding: 10px;
-}
-
-.menu-undertitle {
-    padding: 10px;
-    background: #b3b2b2;
-    color: #FFF;
-    font-size: 18px;
-    padding: 10px;
-}
-
-table {
-    margin: 10px;
-}
-
-#price-max {
-    margin: 10px;
-    width: 280px;
-}
-
-.mini-submenu {
+/*Side Menu*/
+#right-menu{right:35px;}
+#left-menu{left: 0;}
+#right-menu, #left-menu {
     background-color: rgba(0,0,0,0);
     border-radius: 20px;
     padding: 5px;
@@ -94,62 +20,30 @@ table {
     width: 42px;
     text-align: center;
     font-size: 20px;
-    right: 50px;
     z-index:1;
+    outline:none;
 }
-
-.mini-submenu-menu {
-    background-color: rgba(0,0,0,0);
-    border-radius: 20px;
-    padding: 5px;
-    position: absolute;
-    width: 42px;
-    text-align: center;
-    font-size: 20px;
-    left: 4px; 
-    z-index:1;
-}
-
+    
 .list-group {
     width: 300px;
     display: none;
-    position: absolute;
-    top: 1px;
-    right: 15px;
-    z-index: 99;
-    background-color: #FFF;
-    border: 1px solid rgba(0,0,0,0.9);
-    border-radius: 4px;
-    height: 950px;
-
-}
-
-.list-group-menu {
-    width: 300px;
-    display: none;
     position: relative;
-    top: 1px;
-    left: 2px;
+    top: 0;
+    right: 0;
     z-index: 99;
     background-color: #FFF;
     border: 1px solid rgba(0,0,0,0.9);
     border-radius: 4px;
-    height: 950px;
+    height:100%;
 }
 
-
-
-
+.mini-submenu{
+    outline:none;
+}
 .mini-submenu:hover {
     cursor: pointer;
 }
-
-.mini-submenu-menu:hover {
-    cursor: pointer;
-
-}
-
-.mini-submenu .icon-bar {
+.mini-submenu{
     border-radius: 1px;
     display: block;
     height: 2px;
@@ -157,27 +51,47 @@ table {
     margin-top: 3px;
 }
 
-.mini-submenu .icon-bar {
+.mini-submenu{
     background-color: #000;
 }
 
-#slide-submenu {
+#left-slide-menu, #right-slide-menu {
     background: rgba(0,0,0,0.45);
     display: inline-block;
     padding: 0 8px;
     border-radius: 4px;
     cursor: pointer;
-
+    outline:none;
 }
-
-#slide-submenu-menu {
-    background: rgba(0,0,0,0.45);
-    display: inline-block;
-    padding: 0 8px;
-    border-radius: 4px;
-    cursor: pointer;
+/*main menu*/
+#menu {
+    position: absolute;
+    top: 1px;
 }
-
+.menu-undertitle {
+    padding: 10px;
+    background: #b3b2b2;
+    color: #FFF;
+    font-size: 18px;
+    padding: 10px;
+}
+/*filter menu*/
+#filterMenu {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+.filter-undertitle {
+    font-size: 18px;
+    padding: 10px;
+}
+table {
+    margin: 10px;
+}
+#price-max {
+    margin: 10px;
+    width: 280px;
+}
 .star-rating {
     line-height: 32px;
     font-size: 2em;
@@ -186,39 +100,21 @@ table {
     margin: 10px;
 }
 
+/*Button group*/
 .btn-group {
     padding: 10px;
 
 }
-
-
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
 .btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+    outline:none;
 }
-
+/*Voting*/
 #createVotingButton {
     background: none;
     border-radius:50%;
@@ -229,6 +125,8 @@ table {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    text-decoration:none;
+    outline:none;
 }
 
 #createVotingButton:hover {
