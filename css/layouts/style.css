@@ -1,17 +1,19 @@
-html, body{
-    height:100%;
+html,body {
+    height: 100%;
 }
-#map{
-    height:93%;
+
+#map {
+    height: 98%;
+    top: 1px;
+
 }
-#navigation{
-    height:7%;
+
+#navigation {
+    height: 7%;
 }
 
 /*Directions*/
-#inputs,
-#errors,
-#directions {
+#inputs,#errors,#directions {
     position: absolute;
     width: 33.3333%;
     max-width: 300px;
@@ -40,86 +42,155 @@ html, body{
     border-radius: 0 0 3px 3px;
     background: rgba(0,0,0,.25);
     top: 90px;
-    left: 10px;   
-}
-    
-
-
-
-
-
-#filterTitle{
-font-size: 18px;
+    left: 10px;
 }
 
-.filter-undertitle{
-font-weight: bold;
+.vote {
+    color: red;
 }
 
-.mini-submenu{
-  display:none;  
-  background-color: rgba(0, 0, 0, 0);  
-  border: 1px solid rgba(0, 0, 0, 0.9);
-  border-radius: 4px;
-  padding: 9px;  
-  position: relative;
-  width: 42px;
+#filterMenu {
+    position: absolute;
+    top: 1px;
+    right: 1px;
 }
 
-.row{
-position: absolute;
-top: 1px;
-right: 1px;
+#menu {
+    position: absolute;
+    top: 1px;
+}
+
+#filterTitle {
+    font-size: 18px;
+}
+
+.filter-undertitle {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.menu-undertitle {
+    padding: 10px;
+    background: #b3b2b2;
+    color: #FFF;
+    font-size: 18px;
+    padding: 10px;
+}
+
+table {
+    margin: 10px;
+}
+
+#price-max {
+    margin: 10px;
+    width: 280px;
+}
+
+.mini-submenu {
+    background-color: rgba(0,0,0,0);
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+    width: 42px;
+    text-align: center;
+    font-size: 20px;
+right: 40px;
+z-index:1;
+}
+
+.mini-submenu-menu {
+    background-color: rgba(0,0,0,0);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    width: 42px;
+    text-align: center;
+    font-size: 20px;
+    left: 4px; 
+z-index:1;
+}
+
+.list-group {
+    width: 300px;
+    display: none;
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 950px;
+
+}
+
+.list-group-menu {
+    width: 300px;
+    display: none;
+    position: relative;
+    top: 1px;
+    left: 2px;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 950px;
 }
 
 
-.list-group{
-  width: 300px;
+
+
+.mini-submenu:hover {
+    cursor: pointer;
 }
 
+.mini-submenu-menu:hover {
+    cursor: pointer;
 
-.mini-submenu:hover{
-  cursor: pointer;
 }
-
 
 .mini-submenu .icon-bar {
-  border-radius: 1px;
-  display: block;
-  height: 2px;
-  width: 22px;
-  margin-top: 3px;
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    width: 22px;
+    margin-top: 3px;
 }
 
 .mini-submenu .icon-bar {
-  background-color: #000;
+    background-color: #000;
 }
 
-#slide-submenu{
-  background: rgba(0, 0, 0, 0.45);
-  display: inline-block;
-  padding: 0 8px;
-  border-radius: 4px;
-  cursor: pointer;
+#slide-submenu {
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
 
+}
+
+#slide-submenu-menu {
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .star-rating {
-  line-height:32px;
-  font-size:2em;
-  cursor: pointer;
-}
-
-/*Profile button*/
-.btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    font-size: 24px;
-    line-height: 1.33;
-    border-radius: 35px;
+    line-height: 32px;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
     margin: 10px;
 }
+
+.btn-group {
+    padding: 10px;
+
+}
+
 
 
 
@@ -150,7 +221,7 @@ Main components
 
 /* -------------------------------- 
 
-xsigin/signup popup 
+LOGGA IN / REGISTRERA 
 
 -------------------------------- */
 .cd-user-modal {
@@ -426,4 +497,41 @@ xsigin/signup popup
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
   display: block;
 }
+
+/*Circle buttons*/
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+.btn-circle.btn-xl-z {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
 
