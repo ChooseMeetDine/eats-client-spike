@@ -1,10 +1,11 @@
 html,body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 #map {
-    height: 98%;
-    top: 1px;
+    height: 900%;
+    z-index: 0;
 }
 
 #navigation {
@@ -93,8 +94,8 @@ table {
     width: 42px;
     text-align: center;
     font-size: 20px;
-right: 40px;
-z-index:1;
+    right: 50px;
+    z-index:1;
 }
 
 .mini-submenu-menu {
@@ -106,7 +107,7 @@ z-index:1;
     text-align: center;
     font-size: 20px;
     left: 4px; 
-z-index:1;
+    z-index:1;
 }
 
 .list-group {
@@ -218,4 +219,18 @@ z-index:1;
   border-radius: 35px;
 }
 
+#createVotingButton {
+    background: none;
+    border-radius:50%;
+    border-color: white;
+    border-width: thick;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
 
+#createVotingButton:hover {
+    opacity: 0.7;
+}
