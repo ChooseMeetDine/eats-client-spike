@@ -18,9 +18,6 @@ function onLocationError(e) {
 }
 //test marker and popup
 map.on('locationerror', onLocationError);
-var marker = L.marker([55.7597, 13.0074]).addTo(map);
-marker.bindPopup("<b>LÖDDEKÖPINGE!</b>").openPopup();
-var marker = L.marker([57.916, 13.877]).addTo(map);
 
 //costum marker with location
 var greenIcon = L.icon({
@@ -38,3 +35,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'wiigolas.p7idlkkp',
     accessToken: 'pk.eyJ1Ijoid2lpZ29sYXMiLCJhIjoiY2lreHYxejNvMDA0NndsbTRmejl4NndqMSJ9.5hfLbJnXbAsfsPRT3V4W4Q'
 }).addTo(map);
+
+function placeMarker(json) {
+    console.log(json);
+    for (var key in json) { 
+        var item = json[key];
+        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '">';
+        marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
+    }  
+};

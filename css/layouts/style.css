@@ -2,11 +2,24 @@
 html,body {
     height: 100%;
     overflow-x: hidden;
+    
 }
 /*Map*/
 #map {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
     height: 100%;
     z-index: 0;
+    
+}
+md-button {outline:0;}
+.menubutton{
+    position:relative;
+    z-index: 2;
+    outline: 0;
 }
 
 /*Side Menu*/
@@ -100,28 +113,10 @@ table {
     margin: 10px;
 }
 
-/*Button group*/
-.btn-group {
-    padding: 10px;
 
-}
-.btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    font-size: 24px;
-    line-height: 1.33;
-    border-radius: 35px;
-    outline:none;
-}
 /*Voting*/
 #createVotingButton {
-    background: none;
-    border-radius:50%;
-    border-color: white;
-    border-width: thick;
-    color: white;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -131,4 +126,31 @@ table {
 
 #createVotingButton:hover {
     opacity: 0.7;
+}
+
+.listdemoListControls {
+  /* Add some right padding so that the text doesn't overlap the buttons */ }
+  .listdemoListControls md-divider {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .listdemoListControls md-list {
+    padding-top: 0; }
+  .listdemoListControls md-list-item > p,
+  .listdemoListControls md-list-item > ._md-list-item-inner > p,
+  .listdemoListControls md-list-item ._md-list-item-inner > p,
+  .listdemoListControls md-list-item ._md-list-item-inner > ._md-list-item-inner > p {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */ }
+  .listdemoListControls .secondary-button-padding p {
+    padding-right: 100px; }
+
+md-list-item{
+    padding:0;
+    margin:0;
 }
