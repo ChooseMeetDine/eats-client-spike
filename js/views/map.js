@@ -49,9 +49,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 //Function for creating map markers and marker popup from json data
 function placeMarker(json) {
     //console.log(json);
-    for (var key in json) { 
+    for (var key in json) {
+		//one restaurant object containing all restaurant data
         var item = json[key];
+		//create popup info
         var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '">';
+		//add marker
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };
