@@ -7,7 +7,7 @@ new L.control.locate({position: 'bottomleft'}).addTo(map);
 function onLocationFound(e) {
     var radius = e.accuracy;
 
-    L.marker(e.latlng).addTo(map);
+    L.marker(e.latlng, {icon:redIcon}).addTo(map);
 
     }   
 
@@ -30,6 +30,13 @@ var greenIcon = L.icon({
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
 
+var redIcon = L.icon({
+    iconUrl: 'images/marker-icon-red.png',
+
+    iconSize:     [25, 41], // size of the icon
+    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
+});
+
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 
 
@@ -38,3 +45,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'wiigolas.p7idlkkp',
     accessToken: 'pk.eyJ1Ijoid2lpZ29sYXMiLCJhIjoiY2lreHYxejNvMDA0NndsbTRmejl4NndqMSJ9.5hfLbJnXbAsfsPRT3V4W4Q'
 }).addTo(map);
+
+//Function for creating map markers and marker popup from json data
+function placeMarker(json) {
+    //console.log(json);
+    for (var key in json) { 
+        var item = json[key];
+        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '">';
+        marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
+    }  
+};
