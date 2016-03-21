@@ -15,95 +15,11 @@ html,body {
     z-index: 0;
     
 }
-md-button {outline:0;}
-.menubutton{
-    position:relative;
-    z-index: 2;
-    outline: 0;
-}
 
-/*Side Menu*/
-#right-menu{right:35px;}
-#left-menu{left: 0;}
-#right-menu, #left-menu {
-    background-color: rgba(0,0,0,0);
-    border-radius: 20px;
-    padding: 5px;
-    position: relative;
-    width: 42px;
-    text-align: center;
-    font-size: 20px;
-    z-index:1;
-    outline:none;
-}
-    
-.list-group {
-    width: 300px;
-    display: none;
-    position: relative;
-    top: 0;
-    right: 0;
-    z-index: 99;
-    background-color: #FFF;
-    border: 1px solid rgba(0,0,0,0.9);
-    border-radius: 4px;
-    height:100%;
-}
 
-.mini-submenu{
-    outline:none;
-}
-.mini-submenu:hover {
-    cursor: pointer;
-}
-.mini-submenu{
-    border-radius: 1px;
-    display: block;
-    height: 2px;
-    width: 22px;
-    margin-top: 3px;
-}
-
-.mini-submenu{
-    background-color: #000;
-}
-
-#left-slide-menu, #right-slide-menu {
-    background: rgba(0,0,0,0.45);
-    display: inline-block;
-    padding: 0 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    outline:none;
-}
-/*main menu*/
-#menu {
-    position: absolute;
-    top: 1px;
-}
-.menu-undertitle {
-    padding: 10px;
-    background: #b3b2b2;
-    color: #FFF;
-    font-size: 18px;
-    padding: 10px;
-}
-/*filter menu*/
-#filterMenu {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-}
 .filter-undertitle {
     font-size: 18px;
     padding: 10px;
-}
-table {
-    margin: 10px;
-}
-#price-max {
-    margin: 10px;
-    width: 280px;
 }
 .star-rating {
     line-height: 32px;
@@ -113,8 +29,10 @@ table {
     margin: 10px;
 }
 
-
 /*Voting*/
+table {
+    margin: 10px;
+}
 #createVotingButton {
     z-index: 2;
     position: absolute;
@@ -127,29 +45,24 @@ table {
 #createVotingButton:hover {
     opacity: 0.7;
 }
+/*mainmenu*/
 
-.listdemoListControls {
-  /* Add some right padding so that the text doesn't overlap the buttons */ }
-  .listdemoListControls md-divider {
-    margin-top: 0;
-    margin-bottom: 0; }
-  .listdemoListControls md-list {
-    padding-top: 0; }
-  .listdemoListControls md-list-item > p,
-  .listdemoListControls md-list-item > ._md-list-item-inner > p,
-  .listdemoListControls md-list-item ._md-list-item-inner > p,
-  .listdemoListControls md-list-item ._md-list-item-inner > ._md-list-item-inner > p {
-    -webkit-user-select: none;
-    /* Chrome all / Safari all */
-    -moz-user-select: none;
-    /* Firefox all */
-    -ms-user-select: none;
-    /* IE 10+ */
-    user-select: none;
-    /* Likely future */ }
-  .listdemoListControls .secondary-button-padding p {
-    padding-right: 100px; }
-
+#slidermenu{
+    position:relative;
+    float:left;
+    background:white;
+    z-index: 1;
+    padding:0;
+}
+md-sidenav{
+    max-height:100vh;
+    z-index: 3;
+}
+md-backdrop.md-sidenav-backdrop{z-index:2;}
+.menu{
+    max-height:100vh;
+    overflow:hidden;
+}
 md-list-item{
     padding:0;
     margin:0;

@@ -1,0 +1,9 @@
+<md-list id="slidermenu">
+    <md-list-item ng-click="toggleMainMenu()" aria-label="main menu button"><i class="fa fa-picture-o" ></i>&nbsp;Menu
+    </md-list-item>
+        <md-list-item ng-click="toggleFilterMenu()" aria-label="filter menu button"><i class="glyphicon glyphicon-sort"></i>&nbsp;Filter
+    </md-list-item>
+</md-list>
+<div ng-include="'mainmenu.html'"></div>
+<div ng-include="'filtermenu.html'"></div>
+

@@ -25,8 +25,6 @@
 		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
         <!-- FontAwesome -->
         <link rel="stylesheet" href="libs/bower/lib/font-awesome/css/font-awesome.css">
-		<!-- right and left mini menu -->
-		<script src="js/views/sidemenu.js"></script>
         <!-- location button/mapbox -->
 		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
@@ -40,220 +38,22 @@
         <script src="js/controllers/list.js"></script>
         <script src="js/controllers/checkbox.js"></script>
         <script src="js/views/getRestaurants.js"></script>
-
         
 	</head>
-	<body ng-app="app">
-<div ng-controller="slideMenu" layout="column" style="height:500px;" ng-cloak>
-    <section layout="row" flex>
-        <md-content flex >
-            <div>
-                <div>
-                    <md-button ng-click="toggleLeft()"
-                    ng-hide="isOpenLeft()" class="md-fab" aria-label="Main Menu">
-                        <i class="fa fa-picture-o"></i>
-                    </md-button>
-                </div>
-            </div>
-          <div flex></div>
-        </md-content>
-        <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
-          <md-toolbar class="md-theme-light md-accent">
-            <span ng-click="close()" class="pull-right">
-                <h1 class="md-toolbar-tools"><i class="fa fa-picture-o"></i>&nbsp;Användarnamn</h1>
-            </span>
-          </md-toolbar>
-          <md-content ng-controller="LeftCtrl" layout-padding>
-              <md-list ng-controller="ListCtrl" ng-cloak>
-                <!-- Link to profile -->
-                <md-list-item href="#aboutModal" data-toggle="modal" data-target="#profilsida" md-expando>
-                    <p>Min Profil</p>
-                    <i class="fa fa-picture-o"></i>
-                </md-list-item>
-                <!-- Link to settings -->
-                <md-list-item href="#">
-                    <p>Inställningar</p>
-                    <i class="fa fa-cog"></i>
-                </md-list-item>
-                  <hr>
-                <!-- Group Menu -->
-              <md-subheader class="md-no-sticky">Grupper</md-subheader>
-                <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
-                    <p>Grupp 1</p>
-                    <i class="fa fa-user"></i>
-                </md-list-item>
-              <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
-                    <p>Grupp 2</p>
-                    <i class="fa fa-user"></i>
-                </md-list-item>
-                  <hr>
-    <!-- Others Menu -->
-              <md-subheader class="md-no-sticky">Övrigt</md-subheader>
-              <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
-                    <p>Skapa ny omröstning</p>
-                    <i class="fa fa-sticky-note-o"></i>
-                </md-list-item>
-              <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
-                    <p>Skapa ny grupp</p>
-                    <i class="fa fa-users"></i>
-                </md-list-item>
-                  <hr>
-                <md-button data-toggle="tooltip" data-placement="top" title="Logga ut!">
-                    <span class="glyphicon glyphicon-log-out"></span> Logga ut
-                </md-button>
-              </md-list>
-            
-          </md-content>
-        </md-sidenav>
-        <md-content flex >
-          <div>
-            <div class="pull-right menubutton">
-              <md-button ng-click="toggleRight()"
-                ng-hide="isOpenRight()" class="md-fab md-primary md-hue-2" aria-label="Filter Menu">
-                <i class="glyphicon glyphicon-sort"></i>
-              </md-button>
-            </div>
-          </div>
-          <div flex></div>
-        </md-content>
-        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-          <md-toolbar class="md-theme-light">
-            <h1 class="md-toolbar-tools"><i class="fa fa-search"></i>&nbsp;Filter</h1>
-          </md-toolbar>
-          <md-content ng-controller="RightCtrl" layout-padding>
-            <!-- Filter Menu -->
-<div>
-<!-- Types of filter -->
-        <div>
-            <span class="filter-undertitle">		
-                <i class="fa fa-check-square-o"></i> Mattyp:		
-            </span>
-            <md-list ng-controller="ListCtrl" ng-cloak>
-                
-            </md-list>
-            <table style="width:100%">
-                <tr>
-                    <td><md-checkbox class="md-primary">Alla mattyper</md-checkbox></td>
-                    <td><md-checkbox class="md-primary">Pizza</md-checkbox></td>
-                </tr>
-                <tr>
-                    <td><md-checkbox class="md-primary">Italienskt</md-checkbox></td>
-                    <td><md-checkbox class="md-primary">Asiatiskt</md-checkbox></td>
-                </tr>
-                <tr>
-                    <td><md-checkbox class="md-primary">Husmanskost</md-checkbox></td>
-                    <td><md-checkbox class="md-primary">Grekiskt</md-checkbox></td>
-                </tr>
-                <tr>
-                    <td><md-checkbox class="md-primary">Sushi</md-checkbox></td>
-                    <td><md-checkbox class="md-primary">Vegetariskt</md-checkbox></td>
-                </tr>
-                <tr>
-                    <td><md-checkbox class="md-primary">Indiskt</md-checkbox></td>
-                    <td><md-checkbox class="md-primary">Hamburgare</md-checkbox></td>
-                </tr>
-            </table>
-                        <!-- Price Filter Slider -->
-            <md-slider-container ng-controller="AppCtrl">
-              <p class="filter-undertitle"><i class="fa fa-usd"></i>&nbsp;Prisklass</p>
-              <md-slider ng-model="princeRange" class="md-primary" aria-label="Price Slider" flex md-discrete ng-readonly="readonly"></md-slider>
-            </md-slider-container>
-            
-            <!-- Rating -->
-            <span class="filter-undertitle"><i class="fa fa-star"></i>&nbsp;Betyg</span>
-            <div class="star-rating"> 
-                <span class="fa fa-star" data-rating="1"></span>
-                <span class="fa fa-star" data-rating="2"></span>
-                <span class="fa fa-star" data-rating="3"></span>
-                <span class="fa fa-star-o" data-rating="4"></span>
-                <span class="fa fa-star-o" data-rating="5"></span>
-            </div>
-            </div></div>
-          </md-content>
-        </md-sidenav>
-      </section>
-</div>
-        
-        <!-- Modal - Profilsida i popup-fönster -->
-    <div class="modal fade" id="profilsida" tabindex="-1" role="dialog" aria-labelledby="profilsidaLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <center>
-                        <img src="images/profile.jpeg" name="profilsida" width="140" height="140" border="0" class="img-circle">
-                        <h3 class="media-heading">Gustav Svensson <small>Malmö</small></h3>
-                        <hr>
-                        <center>
-                        <p class="text-center">
-                            <strong>Email: </strong><br>
-                            gustavsvenssonn@gmail.com
-                        </p>
-                        <p class="text-center">
-                            <strong>Mobilnummer: </strong><br>
-                            0738097421
-                        </p>
-                        <br>
-                        <button type="button" class="btn btn-default">Redigera</button>
-                    </center>
-                    <br>                                         
-                    </center>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Tillbaka till kartan</button>
-                    </center>
-                </div>
-            </div>
+    <body ng-app="app">
+        <div ng-controller="slideMenu" class="menu" ng-include="'newmenu.html'"></div>
+        <div ng-include="'profilepage.html'"></div>
+        <div ng-include="'votepage.html'"></div>
+        <!-- Karta -->
+        <div id="map" ng-controller="getRestaurants" class="container-fluid">        
         </div>
-    </div>
-    <!-- Genväg till Skapa ny omröstning -->        
-    <md-button id="createVotingButton" class="md-fab md-warn" data-toggle="modal" data-target="#newVote">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true" aria-label="Skapa omröstning"></span>
-    </md-button>   
-    <!-- Skapa ny omrösting -->
-    <div id="newVote" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Skapa ny omröstning</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label><input type="text" name="namn"> Namn på event </md-checkbox>
-                        </div>
-                        <div class="form-group">
-                            <label><input type="checkbox" name="behorighet"> Endast jag får lägga till restauranger </label>
-                        </div>
-                        <div class="form-group">
-                            <label><input type="time" name="sluttid"> Sluttid </label>
-                        </div>
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Ange grupp <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li value="grupp1"><a href="#">CMD</a></li>
-                            <li value="grupp2"><a href="#">IA13</a></li>
-                            <li value="grupp3"><a href="#">Odd Hill</a></li>
-                        </ul>
-                        <button type="submit" class="btn btn-success">Starta</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Karta -->
-    <div id="map" ng-controller="getRestaurants" class="container-fluid">        
-    </div>
-    <script src="js/views/map.js"></script>
-         <!-- Angular Material requires Angular.js Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+        <script src="js/views/map.js"></script>
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
-  <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 	</body>
 </html>

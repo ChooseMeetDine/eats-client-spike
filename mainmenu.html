@@ -1,0 +1,53 @@
+<md-content flex >
+    <div flex></div>
+</md-content>
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="main">
+    <md-toolbar class="md-theme-light md-accent">
+        <span ng-click="close()" class="pull-right">
+            <h1 class="md-toolbar-tools"><i class="fa fa-picture-o"></i>&nbsp;Användarnamn</h1>
+        </span>
+    </md-toolbar>
+    <md-content layout-padding>
+        <md-list ng-controller="ListCtrl" ng-cloak>
+            <!-- Link to profile -->
+            <md-input-container style="margin-right: 10px;">
+                <label>Size</label>
+            </md-input-container>
+            <md-list-item href="#aboutModal" data-toggle="modal" data-target="#profilsida" md-expando>
+                <p>Min Profil</p>
+                <i class="fa fa-picture-o"></i>
+            </md-list-item>
+            <!-- Link to settings -->
+            <md-list-item href="#">
+                <p>Inställningar</p>
+                <i class="fa fa-cog"></i>
+            </md-list-item>
+            <hr>
+            <!-- Group Menu -->
+            <md-subheader class="md-no-sticky">Grupper</md-subheader>
+            <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
+                <p>Grupp 1</p>
+                <i class="fa fa-user"></i>
+            </md-list-item>
+            <md-list-item  href="#" data-toggle="modal" data-target="#profilsida">
+                <p>Grupp 2</p>
+                <i class="fa fa-user"></i>
+            </md-list-item>
+            <hr>
+    <!-- Others Menu -->
+            <md-subheader class="md-no-sticky">Övrigt</md-subheader>
+            <md-list-item  href="#" data-toggle="modal" data-target="#newVote">
+                <p>Skapa ny omröstning</p>
+                <i class="fa fa-sticky-note-o"></i>
+            </md-list-item>
+            <md-list-item  href="#">
+                <p>Skapa ny grupp</p>
+                <i class="fa fa-users"></i>
+            </md-list-item>
+            <hr>
+            <md-button data-toggle="tooltip" data-placement="top" title="Logga ut!">
+                <span class="glyphicon glyphicon-log-out"></span> Logga ut
+            </md-button>
+        </md-list>
+    </md-content>
+</md-sidenav>
