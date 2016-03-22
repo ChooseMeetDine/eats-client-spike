@@ -16,7 +16,6 @@ html,body {
     
 }
 
-
 .filter-undertitle {
     font-size: 18px;
     padding: 10px;
@@ -30,11 +29,6 @@ html,body {
 }
 
 /*Voting*/
-/*give id or class*/
-table {
-    margin: 10px;
-}
-/***************/
 #createVotingButton {
     z-index: 2;
     position: absolute;
@@ -98,9 +92,6 @@ md-backdrop.md-sidenav-backdrop{
 
 
 
-
-
-
 /* RESETS: md-button., md-list*/
 .md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
     margin:0;
@@ -110,6 +101,9 @@ md-backdrop.md-sidenav-backdrop{
     line-height:normal; 
 }
 
+
+
+/*Trigger for pupup do*/
 .trigger{
     width:20px;
     height:5px;
