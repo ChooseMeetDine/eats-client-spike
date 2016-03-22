@@ -9,8 +9,6 @@
         <!-- Angular Material -->
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- Custom Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="css/layouts/style.css">
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -23,6 +21,8 @@
 		<!-- Leaflet -->
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+        <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.css' rel='stylesheet' />
         <!-- FontAwesome -->
         <link rel="stylesheet" href="libs/bower/lib/font-awesome/css/font-awesome.css">
         <!-- location button/mapbox -->
@@ -38,6 +38,7 @@
         <script src="js/controllers/list.js"></script>
         <script src="js/controllers/checkbox.js"></script>
         <script src="js/views/getRestaurants.js"></script>
+<<<<<<< HEAD
         <script src ="js/controllers/moreInfo.js"></script>
         
 	</head>
@@ -50,6 +51,11 @@
         <div id="map" ng-controller="getRestaurants" class="container-fluid">        
         </div>
         <script src="js/views/map.js"></script>
+=======
+        <script src="js/controllers/marker.js"></script>
+
+
+>>>>>>> origin/new_design
         <!-- Angular Material requires Angular.js Libraries -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -57,5 +63,18 @@
 
         <!-- Angular Material Library -->
         <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <!-- Custom Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/layouts/style.css">
+        
+	</head>
+    <body ng-app="app">
+        <div ng-controller="slideMenu" ng-include="'newmenu.html'"></div>
+        <div ng-include="'profilepage.html'"></div>
+        <div ng-include="'votepage.html'"></div>
+        
+        <!-- Map -->
+        <div id="map" ng-controller="getRestaurants" class="container-fluid">
+        </div>       
+        <script src="js/views/map.js"></script>
 	</body>
 </html>

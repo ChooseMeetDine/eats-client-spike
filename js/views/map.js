@@ -1,6 +1,6 @@
 var map = L.map('map', { zoomControl: false }).locate({setView: true, maxZoom: 13});
 
-new L.Control.Zoom({ position: 'topright' }).addTo(map);
+new L.Control.Zoom({position: 'topright'}).addTo(map);
 
 new L.control.locate({position: 'topright'}).addTo(map);
 
@@ -51,7 +51,11 @@ function placeMarker(json) {
     //console.log(json);
     for (var key in json) { 
         var item = json[key];
-        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '">';
+        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '"><md-button class="trigger md-primary md-raised edgePadding" id="' + item.name + '">Say hi</md-button>';
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };
+$('#map').on('click', '.trigger', function() {
+    alert($('.trigger').attr('id'));
+});
+
