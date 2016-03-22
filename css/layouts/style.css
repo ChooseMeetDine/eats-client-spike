@@ -30,9 +30,11 @@ html,body {
 }
 
 /*Voting*/
+/*give id or class*/
 table {
     margin: 10px;
 }
+/***************/
 #createVotingButton {
     z-index: 2;
     position: absolute;
@@ -46,24 +48,48 @@ table {
     opacity: 0.7;
 }
 /*mainmenu*/
-
-#slidermenu{
-    position:relative;
-    float:left;
+#menu{
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    height:25px;
     background:white;
-    z-index: 1;
-    padding:0;
-}
-md-sidenav{
-    max-height:100vh;
-    z-index: 3;
-}
-md-backdrop.md-sidenav-backdrop{z-index:2;}
-.menu{
-    max-height:100vh;
-    overflow:hidden;
-}
-md-list-item{
+    z-index:4;
     padding:0;
     margin:0;
+}
+#menu .md-button{
+    display:block;
+    width:25px;
+    float:left;
+    line-height: 25px;
+}
+md-sidenav{
+    display:block;
+    height:100vh;
+    z-index: 3;
+    padding-top:26px;
+    
+}
+md-backdrop.md-sidenav-backdrop{
+    z-index:2;
+}
+
+
+/*md-button., md-list*/
+.md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
+    margin:0;
+    padding:0;
+    min-width:0;
+    min-height:0;
+    line-height:normal;
+    
+}
+
+.trigger{
+    width:20px;
+    height:5px;
+    background:blue;
+    cursor: pointer;
 }
