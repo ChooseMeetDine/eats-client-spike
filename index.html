@@ -38,12 +38,14 @@
         <script src="js/controllers/list.js"></script>
         <script src="js/controllers/checkbox.js"></script>
         <script src="js/views/getRestaurants.js"></script>
+        <script src ="js/controllers/moreInfo.js"></script>
         
 	</head>
     <body ng-app="app">
         <div ng-controller="slideMenu" class="menu" ng-include="'newmenu.html'"></div>
         <div ng-include="'profilepage.html'"></div>
         <div ng-include="'votepage.html'"></div>
+        <div ng-include="'moreinfo.html'"></div>
         <!-- Karta -->
         <div id="map" ng-controller="getRestaurants" class="container-fluid">        
         </div>

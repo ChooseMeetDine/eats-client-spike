@@ -58,6 +58,17 @@ md-sidenav{
     max-height:100vh;
     z-index: 3;
 }
+/*the width of the sidemenu*/    
+
+.infomenu{
+    
+width: 500px;
+}
+
+.moreinfo{
+    
+z-index: 3;
+}
 md-backdrop.md-sidenav-backdrop{z-index:2;}
 .menu{
     max-height:100vh;
@@ -67,3 +78,4 @@ md-list-item{
     padding:0;
     margin:0;
 }
+

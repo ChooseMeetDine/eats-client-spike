@@ -1,4 +1,4 @@
-app.controller('slideMenu', function ($scope, $timeout, $mdSidenav, $log) {
+app.controller('slideMenu', function ($scope, $mdSidenav) {
     $scope.toggleMainMenu = buildToggler('main');
     $scope.toggleFilterMenu = buildToggler('filter');
     
