@@ -8,7 +8,7 @@
 		"attributes": {
 			"name": "Bamboo City",
 			"info": " Här kan du njuta av Thaibuffé, Kinabuffé, Sushi och Mongolian barbeque. Vi erbjuder en mycket hög kvalitet i våra bufféer i härliga lokaler. Vi serverar både lunch och a la carte.",
-			"photo": "http://photo.com/1234.jpg",
+			"photo": "http://www.lorensbergsteatern.se/sites/default/files/Mat.jpg",
 			"pricerate": 3,
 			"rating": 4,
 			"number_votes": 27,
@@ -37,7 +37,7 @@
 		"attributes": {
 			"name": "Green Mango",
 			"info": "Helt ovanligt thai restaurant",
-			"photo": "http://photo.com/2345.jpg",
+			"photo": "http://whatsupsthlm.se/images/content/location/2925/restaurang_muse(3).jpg",
 			"pricerate": 3,
 			"rating": 3,
 			"number_votes": 15,
@@ -66,7 +66,7 @@
 		"attributes": {
 			"name": "Krua Thai",
 			"info": "Helt vanligt thai restaurant",
-			"photo": "http://photo.com/2345.jpg",
+			"photo": "http://static.thatsup.net/content/img/place/r/e/50bf02859354ad44c8455e71f04fa975.jpg",
 			"pricerate": 3,
 			"rating": 3,
 			"number_votes": 15,
@@ -95,7 +95,7 @@
 		"attributes": {
 			"name": "Veggie Garden",
 			"info": "Black magic veggie food for hipsters",
-			"photo": "http://photo.com/2345.jpg",
+			"photo": "http://www.thaibreak.se/wp-content/uploads/2012/11/Thaibreak-Restaurang-Uppsala-SEB-USIF-Arena-Dec-2012-101.jpg",
 			"pricerate": 3,
 			"rating": 1,
 			"number_votes": 23,

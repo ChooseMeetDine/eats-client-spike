@@ -51,11 +51,14 @@ function placeMarker(json) {
     //console.log(json);
     for (var key in json) { 
         var item = json[key];
-        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img src="' + item.photo + '"><md-button class="trigger md-primary md-raised edgePadding" id="' + item.name + '">Say hi</md-button>';
+        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img class="popupimg" src="' + item.photo + '"><button class="trigger" id="'+item.id +'">Mer info</button>';
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };
 $('#map').on('click', '.trigger', function() {
-    alert($('.trigger').attr('id'));
+    var restId = $(this).attr('id');
+    //console.log(restId);
+    angular.element(document.getElementById('moreInfoMenu')).scope().toggleMoreInfoMenu();
+    angular.element($('#moreInfoSlider')).scope().createInfoScopes(restId);
 });
 

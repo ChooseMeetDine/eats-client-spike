@@ -1,3 +1,12 @@
+/* RESETS: md-button., md-list*/
+.md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
+    margin:0;
+    padding:0;
+    min-width:0;
+    min-height:0;
+    line-height:normal;
+}
+
 /*HTML*/
 html,body {
     height: 100%;
@@ -85,28 +94,11 @@ md-backdrop.md-sidenav-backdrop{
     right:400px;
 }
 
-
-
-
-
-
-
-
-/* RESETS: md-button., md-list*/
-.md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
-    margin:0;
-    padding:0;
-    min-width:0;
-    min-height:0;
-    line-height:normal; 
+/*images*/
+.popupimg{
+    width:200px;
+    
 }
-
-
-
-/*Trigger for pupup do*/
-.trigger{
-    width:20px;
-    height:5px;
-    background:blue;
-    cursor: pointer;
+.infoimg{
+    width:350px;
 }

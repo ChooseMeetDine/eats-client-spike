@@ -24,6 +24,7 @@ app.controller('getRestaurants', function($scope, $http) {
         for(var k in items){
             var restaurant = items[k];
             var restaurantData = {
+                "id" : restaurant.id,
                 "name": restaurant.attributes.name,
                 "lat": restaurant.attributes.latitude,
                 "long":  restaurant.attributes.longitude,
@@ -43,8 +44,19 @@ app.controller('getRestaurants', function($scope, $http) {
         
         placeMarker(restaurantResult);
         
+        
         var end = new Date().getTime();
         var time = end - start;
         console.log("Exec time = " + time);
+        
+        
+        $scope.createInfoScopes = function(id){
+            $scope.content = restaurantResult[id];
+        }
+            
     }
+    
+    
+   
+    
 });
