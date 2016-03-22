@@ -76,15 +76,38 @@ md-backdrop.md-sidenav-backdrop{
     z-index:2;
 }
 
+/*the width of the sidemenu*/    
 
-/*md-button., md-list*/
+.infomenu{
+    width: 500px;
+}
+
+.moreinfo{
+    float:right;
+    z-index: 3;
+    background:white;
+    width:200px;
+    height:50px;
+    right:400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESETS: md-button., md-list*/
 .md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
     margin:0;
     padding:0;
     min-width:0;
     min-height:0;
-    line-height:normal;
-    
+    line-height:normal; 
 }
 
 .trigger{
@@ -92,20 +115,4 @@ md-backdrop.md-sidenav-backdrop{
     height:5px;
     background:blue;
     cursor: pointer;
-}
-
-/*the width of the sidemenu*/    
-
-.infomenu{
-    
-width: 500px;
-}
-
-.moreinfo{
-float:right;
-z-index: 3;
-background:white;
-width:200px;
-height:50px;
-right:400px;
 }
