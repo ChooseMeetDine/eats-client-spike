@@ -51,7 +51,7 @@ function placeMarker(json) {
     //console.log(json);
     for (var key in json) { 
         var item = json[key];
-        var info = '<p>' + item.name + '</p><p>' + item.rating + '</p><img class="popupimg" src="' + item.photo + '"><button class="trigger" id="'+item.id +'">Mer info</button>';
+        var info = '<p>' + item.name + '<br>' + item.rating + '</p><img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };

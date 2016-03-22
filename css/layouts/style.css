@@ -1,5 +1,5 @@
 /* RESETS: md-button., md-list*/
-.md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner{
+.md-button, md-list-item .md-list-item-inner, md-list-item, .md-subheader-inner, .leaflet-popup-content, .leaflet-popup-content-wrappe{
     margin:0;
     padding:0;
     min-width:0;
