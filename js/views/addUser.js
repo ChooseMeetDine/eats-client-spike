@@ -1,20 +1,16 @@
-app.controller('forms', function($scope, $http) {
-        $scope.regRestaurant = function (){
+app.controller('addUser', function($scope, $http) {
+        $scope.regUser = function (){
             user = {
-                'name' : $scope.name,
-                'category' : $scope.category,
-                'pricerate' : $scope.priceRate,
-                'rating' : $scope.rating,
-                'info' : $scope.info,
-                'photo' : $scope.photo,
-                'longitude' : $scope.longitude,
-                'latitude' : $scope.latitude
-            
+                'name': $scope.name,
+                'password': $scope.password,
+                'email': $scope.email,
+                'phone': $scope.phone,
+                'photo': $scope.photo
             };
             
             $http({
                 method: 'POST',
-                url: '#',
+                url: 'http://localhost:5000/users',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){

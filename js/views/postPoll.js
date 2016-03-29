@@ -1,12 +1,11 @@
-app.controller('regUser', function($scope, $http) {
+app.controller('postPoll', function($scope, $http) {
   $scope.regUser = function (){
             user = {
-            'name' : $scope.name,
-            'email' : $scope.regEmail,
-            'password' : $scope.regPass
+            'pollName' : $scope.pollName,
+            'time' : $scope.time
             
             };
-    console.log(user);
+            
             $http({
                 method: 'POST',
                 url: '#',
@@ -16,9 +15,9 @@ app.controller('regUser', function($scope, $http) {
                 var token = response.data.token;
                 var message = response.data;
                 
-                $scope.regUser = message;
+                $scope.postPoll = message;
             }, function errorCallback(){
-                $scope.regUser = "error";
+                $scope.PostPoll = "error";
             });
             
             console.log(user);   
