@@ -24,14 +24,16 @@ app.controller('addPoll', function($scope, $http) {
     }
     getRestaurant();
     */
+        
+        $scope.allowNewRestaurants = {value1: true};
         $scope.regPoll = function (){
             poll = {
                 'name': $scope.name,
                 'expires': $scope.expires,
-                'restaurants': [$scope.restaurants],
-                /*'users': [$scope.users]*/
+                /*'restaurants': [$scope.restaurants],*/
+                /*'users': [$scope.users],*/
                 /*'group': $scope.group*/
-                'allowNewRestaurants': $scope.allowNewRestaurants
+                'allowNewRestaurants': $scope.allowNewRestaurants.value1
             };
             
             $http({
@@ -47,9 +49,7 @@ app.controller('addPoll', function($scope, $http) {
             }, function errorCallback(){
                 $scope.regUser = "error";
             });
-            
-            console.log(poll);   
-            
+            console.log(poll)
         };
     });
                    
