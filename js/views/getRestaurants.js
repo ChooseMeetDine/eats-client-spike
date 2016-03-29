@@ -2,7 +2,7 @@ app.controller('getRestaurants', function($scope, $http) {
       
     var start = new Date().getTime();
     var restaurantResult = {};    
-    var link = 'http://128.199.48.244:3000/restaurants';
+    var link = 'http://localhost:5000/restaurants';
     
     
     getRestaurant(link);

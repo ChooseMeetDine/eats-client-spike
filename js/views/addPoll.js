@@ -30,8 +30,8 @@ app.controller('addPoll', function($scope, $http) {
                 'expires': $scope.expires,
                 'restaurants': [$scope.restaurants],
                 /*'users': [$scope.users]*/
-                'group': $scope.group
-                /*'allowNewRestaurants': $scope.allowNewRestaurants*/
+                /*'group': $scope.group*/
+                'allowNewRestaurants': $scope.allowNewRestaurants
             };
             
             $http({
