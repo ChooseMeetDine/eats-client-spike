@@ -40,6 +40,7 @@
         <script src="js/controllers/checkbox.js"></script>
         <script src="js/views/getRestaurants.js"></script>
         <script src="js/views/getUserInformation.js"></script>
+        <script src="js/controllers/login.js"></script>
 
         <!-- Angular Material requires Angular.js Libraries -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -53,12 +54,17 @@
         
 	</head>
     <body ng-app="app">
+<<<<<<< HEAD
         <!--<div id="registerPage" ng-include="'pages/registerpage.html'"></div>-->
+=======
+        
+>>>>>>> e48b3125f9a367870535e6e367c31322aabaa8e8
         <div ng-controller="slideMenu" class="menu" ng-include="'pages/sidemenu.html'"></div>
         <div ng-include="'pages/profilepage.html'"></div>
         <div ng-include="'pages/votepage.html'"></div>
         <div ng-include="'pages/moreinfo.html'"></div>
         <div ng-controller="getUserInformation"></div>
+        <div id="loginbutton" ng-include="'pages/login.html'"></div>
         <!-- Karta -->
         <div id="map" ng-controller="getRestaurants" class="container-fluid">        
         </div>
