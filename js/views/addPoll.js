@@ -38,7 +38,7 @@ app.controller('addPoll', function($scope, $http) {
             
             $http({
                 method: 'POST',
-                url: 'http://localhost:5000/polls',
+                url: 'http://128.199.48.244:3000/polls',
                 headers: {'Content-Type': 'application/json'},
                 data: poll
             }).then(function successCallback(response){
