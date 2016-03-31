@@ -1,4 +1,5 @@
 var map = L.map('map', { zoomControl: false }).locate({setView: true, maxZoom: 13});
+var markers = new L.FeatureGroup();
 
 new L.Control.Zoom({position: 'topright'}).addTo(map);
 
@@ -53,12 +54,19 @@ function placeMarker(json) {
         var item = json[key];
         var info = '<p>' + item.name + '<br>' + item.rating + '</p><img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
+        markers.addLayer(marker);
     }  
 };
+
+
+
+
 $('#map').on('click', '.trigger', function() {
     var restId = $(this).attr('id');
     //console.log(restId);
     angular.element(document.getElementById('moreInfoMenu')).scope().toggleMoreInfoMenu();
     angular.element($('#moreInfoSlider')).scope().createInfoScopes(restId);
 });
+
+
 

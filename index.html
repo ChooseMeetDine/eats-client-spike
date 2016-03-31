@@ -42,6 +42,7 @@
         <script src="js/views/getUserInformation.js"></script>
         <script src="js/controllers/login.js"></script>
         <script src="js/views/addPoll.js"></script>
+        <script src="js/views/addRestaurant.js"></script>
 
         <!-- Angular Material requires Angular.js Libraries -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -55,6 +56,12 @@
         
 	</head>
     <body ng-app="app">
+        <!-->div  style="z-index:999;position:absolute;left:0;bottom:0;" ng-controller="addRestaurant">
+        <button  ng-click="placeMarkerOnClick()">Klick</button>
+        <form>
+            <input type="submit"  ng-click="regRestaurant()" value="reg">
+        </form>
+        </div>-->
         <div ng-controller="slideMenu" class="menu" ng-include="'pages/sidemenu.html'"></div>
         <div ng-include="'pages/profilepage.html'"></div>
         <div ng-include="'pages/votepage.html'"></div>

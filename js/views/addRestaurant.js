@@ -1,6 +1,44 @@
 app.controller('addRestaurant', function($scope, $http) {
-        $scope.regRestaurant = function (){
+        var lat;
+        var lng;
+        var name = "test1";
+        var cat = "13";
+        var price = "5";
+        var rating = "2";
+        var info = "namn: " + name;
+        var photo = "photo.jpg";
+        $scope.placeMarkerOnClick = function(){
+            
+            var marker;
+            console.log(markers);
+            markers.clearLayers(e);
+            map.on('click', function(e){
+                if(marker){
+                    map.removeLayer(marker);    
+                }
+            marker = L.marker(e.latlng).addTo(map);
+            lat = e.latlng.lat; 
+            lng = e.latlng.lng;
+            console.log(lat);
+            console.log(lng);            
+            $scope.lat = lat;
+            $scope.lng = lng;
+            
+            });
+        };
+    
+    
+        $scope.regRestaurant = function(){
             restaurant = {
+                'name' : name,
+                'categories' : [cat],
+                'priceRate' : price,
+                'rating' : rating,
+                'info' : info,
+                'photo' : photo,
+                'lng' : lng,
+                'lat' : lat
+                /*
                 'name' : $scope.name,
                 'categories' : [$scope.category],
                 'priceRate' : $scope.priceRate,
@@ -8,12 +46,12 @@ app.controller('addRestaurant', function($scope, $http) {
                 'info' : $scope.info,
                 'photo' : $scope.photo,
                 'lng' : $scope.lng,
-                'lat' : $scope.lat  
+                'lat' : $scope.lat  */
             };
             
             $http({
                 method: 'POST',
-                url: 'http://128.199.48.244:3000/restaurants',
+                url: 'http://localhost:5000/restaurants',
                 headers: {'Content-Type': 'application/json'},
                 data: restaurant
             }).then(function successCallback(response){
