@@ -15,9 +15,9 @@ app.controller('loginUser', function($scope, $http) {
                 var token = response.data.token;
                 var message = response.data.message;
                 
-                $scope.loginUser = message;
+                console.log(message);
             }, function errorCallback(){
-                $scope.loginUser = 'error';
+                console.log('error');
             });
             
             console.log(user);   

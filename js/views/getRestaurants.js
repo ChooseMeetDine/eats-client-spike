@@ -1,9 +1,7 @@
-app.controller('getRestaurants', function($scope, $http) {
-      
+app.controller('getRestaurants', function($scope, $http) {    
     var start = new Date().getTime();
     var restaurantResult = {};    
-    var link = 'js/json/restaurants.json';
-    
+    var link = 'http://localhost:5000/restaurants';
     
     getRestaurant(link);
     

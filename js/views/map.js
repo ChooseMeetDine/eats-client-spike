@@ -1,4 +1,5 @@
 var map = L.map('map', { zoomControl: false }).locate({setView: true, maxZoom: 13});
+var markers = new L.FeatureGroup();
 
 new L.Control.Zoom({position: 'topright'}).addTo(map);
 
@@ -44,14 +45,15 @@ function placeMarker(json) {
     //console.log(json);
     for (var key in json) { 
         var item = json[key];
-        
+        //calls function for rating stars element 
         var rating = createRatingStars(item.rating);
-        
+        //marker popup info
         var info = '<p>' + item.name + rating +'</p>' + '<img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
         
         
         if(item.long != null || items.lat != null) {
             marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
+            markers.addLayer(marker);
         }
         else {
             console.log("trasig latitude eller longitude data");
@@ -59,6 +61,8 @@ function placeMarker(json) {
     }  
 };
 
+//Create a star rating image from css based on restaurant 
+//rating value from json data
 function createRatingStars(rating) {
     var ratingValue = rating;
     var spanElement = '<span class="rating-static rating-'+ratingValue+'"></span>'
@@ -71,4 +75,6 @@ $('#map').on('click', '.trigger', function() {
     angular.element(document.getElementById('moreInfoMenu')).scope().toggleMoreInfoMenu();
     angular.element($('#moreInfoSlider')).scope().createInfoScopes(restId);
 });
+
+
 
