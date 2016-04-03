@@ -51,9 +51,9 @@ function placeMarker(json) {
         var info = '<p>' + item.name + rating +'</p>' + '<img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
         
         
-        if(item.long != null || items.lat != null) {
-            marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
-            markers.addLayer(marker);
+        if(item.lng != null || item.lat != null) {
+                marker = new L.marker([item.lat,item.lng]).bindPopup(info).addTo(map);
+                markers.addLayer(marker);
         }
         else {
             console.log("trasig latitude eller longitude data");

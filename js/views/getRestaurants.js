@@ -24,8 +24,8 @@ app.controller('getRestaurants', function($scope, $http) {
             var restaurantData = {
                 "id" : restaurant.id,
                 "name": restaurant.attributes.name,
-                "lat": restaurant.attributes.latitude,
-                "long":  restaurant.attributes.longitude,
+                "lat": restaurant.attributes.lat,
+                "lng":  restaurant.attributes.lng,
                 "photo": restaurant.attributes.photo,
                 "rating":  restaurant.attributes.rating,
                 "extra": {

@@ -66,11 +66,12 @@
         <div ng-controller="slideMenu" class="menu" ng-include="'pages/sidemenu.html'"></div>
         <div ng-include="'pages/profilepage.html'"></div>
         <div ng-controller="createPoll" ng-include="'pages/votepage.html'"></div>
-        <div ng-include="'pages/moreinfo.html'"></div>
         <div ng-controller="getUserInformation"></div>
         <div id="loginbutton" ng-include="'pages/login.html'"></div>
         <!-- Karta -->
-        <div id="map" ng-controller="getRestaurants" class="container-fluid">
+        <div ng-controller="getRestaurants">
+            <div ng-include="'pages/moreinfo.html'"></div>
+            <div id="map" class="container-fluid"></div>
         </div>
         <script src="js/views/map.js"></script>
 	</body>
