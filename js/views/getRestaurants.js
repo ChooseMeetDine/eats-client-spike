@@ -1,9 +1,7 @@
-app.controller('getRestaurants', function($scope, $http) {
-      
+app.controller('getRestaurants', function($scope, $http) {    
     var start = new Date().getTime();
     var restaurantResult = {};    
     var link = 'http://localhost:5000/restaurants';
-    
     
     getRestaurant(link);
     
@@ -26,8 +24,8 @@ app.controller('getRestaurants', function($scope, $http) {
             var restaurantData = {
                 "id" : restaurant.id,
                 "name": restaurant.attributes.name,
-                "lat": restaurant.attributes.lat,
-                "long":  restaurant.attributes.lng,
+                "lat": restaurant.attributes.latitude,
+                "long":  restaurant.attributes.longitude,
                 "photo": restaurant.attributes.photo,
                 "rating":  restaurant.attributes.rating,
                 "extra": {
@@ -41,7 +39,7 @@ app.controller('getRestaurants', function($scope, $http) {
             var id = restaurant.id;
             restaurantResult[id] = restaurantData;
         }
-        
+        console.log(restaurantResult);
         placeMarker(restaurantResult);
         
         

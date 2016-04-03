@@ -7,33 +7,26 @@ new L.control.locate({position: 'topright'}).addTo(map);
 
 function onLocationFound(e) {
     var radius = e.accuracy;
-
     L.marker(e.latlng, {icon:redIcon}).addTo(map);
 
     }   
 
-map.on('locationfound', onLocationFound);
-
 function onLocationError(e) {
     alert(e.message);
 }
-//test marker and popup
+
+map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
-var marker = L.marker([55.7597, 13.0074]).addTo(map);
-marker.bindPopup("<b>LÖDDEKÖPINGE!</b>").openPopup();
-var marker = L.marker([57.916, 13.877]).addTo(map);
 
 //costum marker with location
 var greenIcon = L.icon({
     iconUrl: 'images/icons/marker-icon-coffee-red.png',
-
     iconSize:     [25, 41], // size of the icon
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
 
 var redIcon = L.icon({
     iconUrl: 'images/icons/marker-icon-red.png',
-
     iconSize:     [25, 41], // size of the icon
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
@@ -52,14 +45,29 @@ function placeMarker(json) {
     //console.log(json);
     for (var key in json) { 
         var item = json[key];
-        var info = '<p>' + item.name + '<br>' + item.rating + '</p><img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
-        marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
-        markers.addLayer(marker);
+        //calls function for rating stars element 
+        var rating = createRatingStars(item.rating);
+        //marker popup info
+        var info = '<p>' + item.name + rating +'</p>' + '<img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
+        
+        
+        if(item.long != null || items.lat != null) {
+            marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
+            markers.addLayer(marker);
+        }
+        else {
+            console.log("trasig latitude eller longitude data");
+        }
     }  
 };
 
-
-
+//Create a star rating image from css based on restaurant 
+//rating value from json data
+function createRatingStars(rating) {
+    var ratingValue = rating;
+    var spanElement = '<span class="rating-static rating-'+ratingValue+'"></span>'
+    return spanElement;
+}
 
 $('#map').on('click', '.trigger', function() {
     var restId = $(this).attr('id');
