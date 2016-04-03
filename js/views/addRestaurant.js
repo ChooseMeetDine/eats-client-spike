@@ -11,7 +11,6 @@ app.controller('addRestaurant', function($scope, $http) {
             
             var marker;
             console.log(markers);
-            markers.clearLayers(e);
             map.on('click', function(e){
                 if(marker){
                     map.removeLayer(marker);    
@@ -20,10 +19,7 @@ app.controller('addRestaurant', function($scope, $http) {
             lat = e.latlng.lat; 
             lng = e.latlng.lng;
             console.log(lat);
-            console.log(lng);            
-            $scope.lat = lat;
-            $scope.lng = lng;
-            
+            console.log(lng);                      
             });
         };
     
