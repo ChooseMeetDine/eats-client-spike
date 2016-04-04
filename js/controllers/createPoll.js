@@ -1,5 +1,5 @@
 app.controller('createPoll', function($scope, $mdDialog, $mdMedia) {
-  $scope.showAdvanced = function(ev) {
+  $scope.createPoll = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
       controller: DialogController,
