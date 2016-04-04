@@ -44,6 +44,10 @@
                 <p>Skapa ny grupp</p>
                 <i class="fa fa-users"></i>
             </md-list-item>
+            <md-list-item  href="#" ng-controller="templatepopup" id="addRestaurantButton" ng-click="toggleAddRestaurant(); showAdvanced($event, 'addrestaurant'); ">
+                <p>Lägg till restaurant</p>
+                <i class="fa fa-users"></i>
+            </md-list-item>
             <hr>
             <md-button data-toggle="tooltip" data-placement="top" title="Logga ut!">
                 <span class="glyphicon glyphicon-log-out"></span> Logga ut

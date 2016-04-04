@@ -2,6 +2,7 @@ app.controller('slideMenu', function ($scope, $mdSidenav) {
     $scope.toggleMainMenu = buildToggler('main');
     $scope.toggleFilterMenu = buildToggler('filter');
     $scope.toggleMoreInfoMenu = buildToggler('info');
+    $scope.toggleAddRestaurant = addRestaurantToggler();
     
     function buildToggler(navID) {
       return function() {
@@ -19,5 +20,11 @@ app.controller('slideMenu', function ($scope, $mdSidenav) {
           }
       }
     }
+    function addRestaurantToggler() {
+        return function() {
+            $mdSidenav('main').close(); 
+        }
+    }
+    
   })
   
