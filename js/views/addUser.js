@@ -3,21 +3,17 @@ app.controller('addUser', function($scope, $http) {
             user = {
                 'name': $scope.name,
                 'password': $scope.password,
-                'email': $scope.email,
-                'phone': $scope.phone,
-                'photo': $scope.photo
+                'email': $scope.email
             };
-            
             $http({
                 method: 'POST',
                 url: 'http://localhost:5000/users',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){
-                var token = response.data.token;
-                var message = response.data.message;
-                
-                $scope.regUser = message;
+                console.log(response.data.message);
+                console.log(user);
+                console.log(response.data.token);
             }, function errorCallback(){
                 $scope.regUser = "error";
             });

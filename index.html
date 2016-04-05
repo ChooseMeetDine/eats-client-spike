@@ -40,12 +40,19 @@
         <script src="js/controllers/checkbox.js"></script>
         <script src="js/views/getRestaurants.js"></script>
         <script src="js/views/getUserInformation.js"></script>
-        <script src="js/controllers/login.js"></script>
         <script src="js/views/addPoll.js"></script>
+<<<<<<< HEAD
         <script src="js/views/addRestaurant.js"></script>
         <script src="js/controllers/createPoll.js"></script>
 		<script src="js/controllers/createRest.js"></script>
 
+=======
+        <script src="js/views/addUser.js"></script>
+        <script src="js/views/loginUser.js"></script>
+        
+        <script src="js/controllers/templatepopup.js"></script>
+        
+>>>>>>> f5e3b12c3c5dc8096210b9e7635454ef9044a7de
         <!-- Angular Material requires Angular.js Libraries -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -58,16 +65,14 @@
         <link rel="stylesheet" type="text/css" href="css/layouts/ratingStyle.css">
 	</head>
     <body ng-app="app">
-        <div  style="z-index:999;position:absolute;left:0;bottom:0;" ng-controller="addRestaurant">
-        <button  ng-click="placeMarkerOnClick()">Klick</button>
-        <form>
-            <input type="submit"  ng-click="regRestaurant()" value="reg">
-        </form>
-        </div>
         <div ng-controller="slideMenu" class="menu" ng-include="'pages/sidemenu.html'"></div>
         <div ng-include="'pages/profilepage.html'"></div>
+<<<<<<< HEAD
         <div ng-controller="createPoll" ng-include="'pages/votepage.html'"></div>
 		<div ng-controller="createRest" ng-include="'pages/mainmenu.html'"></div>
+=======
+        <div ng-controller="templatepopup" ng-include="'pages/votepage.html'"></div>
+>>>>>>> f5e3b12c3c5dc8096210b9e7635454ef9044a7de
         <div ng-controller="getUserInformation"></div>
         <div id="loginbutton" ng-include="'pages/login.html'"></div>
         <!-- Karta -->
@@ -76,5 +81,6 @@
             <div id="map" class="container-fluid"></div>
         </div>
         <script src="js/views/map.js"></script>
+        <script src="js/views/addRestaurant.js"></script>
 	</body>
 </html>

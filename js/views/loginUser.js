@@ -8,7 +8,7 @@ app.controller('loginUser', function($scope, $http) {
             
             $http({
                 method: 'POST',
-                url: '#',
+                url: 'http://localhost:5000/auth',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){
@@ -16,6 +16,7 @@ app.controller('loginUser', function($scope, $http) {
                 var message = response.data.message;
                 
                 console.log(message);
+                console.log(token);
             }, function errorCallback(){
                 console.log('error');
             });
