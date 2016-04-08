@@ -7,11 +7,11 @@
             <h1 class="md-toolbar-tools">Meny</h1>
         </span>
     </md-toolbar>
-    <md-content layout-padding>
-        <md-list ng-controller="ListCtrl" ng-cloak layout-padding>
+    <md-content ng-controller="authJwt" layout-padding>
+        <md-list ng-cloak layout-padding>
             <!-- Link to profile -->
-            <md-list-item href="#aboutModal" data-toggle="modal" data-target="#profilsida" md-expando>
-                <p>Min Profil</p>
+            <md-list-item ng-if="!access" href="#aboutModal" data-toggle="modal" data-target="#profilsida" md-expando>
+                <p>{{ name }}</p>
                 <i class="fa fa-user"></i>
             </md-list-item>
             <!-- Link to settings -->
@@ -21,23 +21,23 @@
             </md-list-item>
             <hr>
             <!-- Group Menu -->
-            <md-subheader class="md-no-sticky">Grupper</md-subheader>
-            <md-list-item  href="#">
+            <md-subheader ng-if="!access" class="md-no-sticky">Grupper</md-subheader>
+            <md-list-item ng-if="!access" href="#">
                 <p>Grupp 1</p>
                 <i class="fa fa-users"></i>
             </md-list-item>
-            <md-list-item  href="#">
+            <md-list-item ng-if="!access" href="#">
                 <p>Grupp 2</p>
                 <i class="fa fa-users"></i>
             </md-list-item>
-            <hr>
+            <hr ng-if="!access">
     <!-- Others Menu -->
             <md-subheader class="md-no-sticky">Övrigt</md-subheader>
             <md-list-item  ng-click="createPoll($event)">
                 <p>Skapa ny omröstning</p>
                 <i class="glyphicon glyphicon-plus"></i>
             </md-list-item>
-            <md-list-item ng-click="createPoll($event)">
+            <md-list-item ng-hide="access" ng-click="createPoll($event)">
                 <p>Skapa ny grupp</p>
                 <i class="glyphicon glyphicon-plus"></i>
             </md-list-item>
@@ -46,9 +46,16 @@
                 <i class="fa fa-users"></i>
             </md-list-item>
             <hr>
-            <md-button data-toggle="tooltip" data-placement="top" title="Logga ut!">
-                <span class="glyphicon glyphicon-log-out"></span> Logga ut
-            </md-button>
+            <div>
+                <div  class="dialog-demo-content" layout="row" layout-wrap layout-margin layout-align="center">
+                    <md-button ng-if="access" ng-controller="templatepopup"  class="md-primary md-raised" ng-click="showTabDialog($event, 'login')" >
+                            Logga in
+                    </md-button>
+                    <md-button ng-if="!access" ng-controller="loginUser" class="md-primary md-raised" ng-click="logoutUser()">
+                        Logga ut
+                    </md-button>
+                </div>
+            </div>
             
         </md-list>
     </md-content>

@@ -1,27 +1,38 @@
-app.controller('loginUser', function($scope, $http) {
+app.controller('loginUser', function($scope, $http, $window) {
         $scope.loginUser = function (){
             user = {
             'email' : $scope.email,
             'password' : $scope.password
-            
             };
             
             $http({
                 method: 'POST',
-                url: 'http://localhost:5000/auth',
+                url: 'http://localhost:3000/auth',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){
-                var token = response.data.token;
-                var message = response.data.message;
                 
-                console.log(message);
-                console.log(token);
+                var userData = response.data;
+             
+                var message = response.data.message;
+                $window.localStorage['userAnon'] = userData.anon;
+                $window.localStorage['userName'] = userData.name;
+                $window.localStorage['jwtToken'] = userData.token;
+                
+                $window.location.reload();
             }, function errorCallback(){
                 console.log('error');
-            });
-            
-            console.log(user);   
-            
+            });            
         };
+    
+        $scope.logoutUser = function(){
+            $window.localStorage.removeItem('jwtToken');
+            $window.localStorage.removeItem('userAnon');
+            $window.localStorage.removeItem('userName');
+            $window.location.reload();
+        }
+        
 });
+
+
+

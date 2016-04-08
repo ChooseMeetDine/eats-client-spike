@@ -13,8 +13,8 @@
 			"rating": 4,
 			"number_votes": 27,
 			"number_won_votes": 3,
-			"longitude": 13.000259,
-			"latitude": 55.6035815,
+			"lng": 13.000259,
+			"lat": 55.6035815,
 			"temporary": false
 		},
 		"relationships": {
@@ -42,8 +42,8 @@
 			"rating": 3,
 			"number_votes": 15,
 			"number_won_votes": 2,
-			"longitude": 13.0085857,
-			"latitude": 55.5909276,
+			"lng": 13.0085857,
+			"lat": 55.5909276,
 			"temporary": false
 		},
 		"relationships": {
@@ -71,8 +71,8 @@
 			"rating": 3,
 			"number_votes": 15,
 			"number_won_votes": 2,
-			"longitude": 13.0067133,
-			"latitude": 55.591311,
+			"lng": 13.0067133,
+			"lat": 55.591311,
 			"temporary": false
 		},
 		"relationships": {
@@ -100,8 +100,8 @@
 			"rating": 1,
 			"number_votes": 23,
 			"number_won_votes": 4,
-			"longitude": 13.0061388,
-			"latitude": 55.6039523,
+			"lng": 13.0061388,
+			"lat": 55.6039523,
 			"temporary": false
 		},
 		"relationships": {

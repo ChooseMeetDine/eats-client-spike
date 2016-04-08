@@ -7,7 +7,7 @@ app.controller('addUser', function($scope, $http) {
             };
             $http({
                 method: 'POST',
-                url: 'http://localhost:5000/users',
+                url: 'http://localhost:3000/users',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){

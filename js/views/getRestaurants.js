@@ -1,15 +1,16 @@
-app.controller('getRestaurants', function($scope, $http) {    
+app.controller('getRestaurants', function($scope, $http, $window) {    
     var start = new Date().getTime();
     var restaurantResult = {};    
-    var link = 'http://localhost:5000/restaurants';
+    var link = 'http://128.199.48.244:3000/restaurants';
     
     getRestaurant(link);
     
     function getRestaurant(url){
         var link = url;
         $http({
-          method: 'GET',
-          url: link
+            method: 'GET',
+            url: link,
+            /*headers: {'x-access-token' : $window.localStorage['jwtToken']}*/
         }).then(function successCallback(response) {
             resultRestaurant(response.data);
         }, function errorCallback(response) {
