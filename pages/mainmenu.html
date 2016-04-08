@@ -4,7 +4,7 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="main">
     <md-toolbar class="md-theme-light md-accent">
         <span>
-            <h1 class="md-toolbar-tools">Meny</h1>
+            <h1 class="md-toolbar-tools">Eats</h1>
         </span>
     </md-toolbar>
     <md-content ng-controller="authJwt" layout-padding>
@@ -32,7 +32,8 @@
             </md-list-item>
             <hr ng-if="!access">
     <!-- Others Menu -->
-            <md-subheader class="md-no-sticky">Övrigt</md-subheader>
+            <md-subheader  class="md-no-sticky">Övrigt</md-subheader>
+            <!-- Menu seciton create new poll and new group and add restaurant -->
             <md-list-item  ng-click="createPoll($event)">
                 <p>Skapa ny omröstning</p>
                 <i class="glyphicon glyphicon-plus"></i>
@@ -45,14 +46,18 @@
                 <p>Lägg till restaurant</p>
                 <i class="fa fa-users"></i>
             </md-list-item>
+			<md-list-item ng-click="showAdvanced($event)">
+				<p>Skapa ny restaurang</p>
+			</md-list-item>			
+			
             <hr>
             <div>
                 <div  class="dialog-demo-content" layout="row" layout-wrap layout-margin layout-align="center">
-                    <md-button ng-if="access" ng-controller="templatepopup"  class="md-primary md-raised" ng-click="showTabDialog($event, 'login')" >
-                            Logga in
+                    <md-button ng-if="access" ng-controller="templatepopup"  class="login md-raised" ng-click="showTabDialog($event, 'login')" >
+                           <i class="glyphicon glyphicon-log-in"></i> Logga in
                     </md-button>
-                    <md-button ng-if="!access" ng-controller="loginUser" class="md-primary md-raised" ng-click="logoutUser()">
-                        Logga ut
+                    <md-button ng-if="!access" ng-controller="loginUser" class="login md-raised" ng-click="logoutUser()">
+                       <i class="glyphicon glyphicon-log-out"></i> Logga ut
                     </md-button>
                 </div>
             </div>

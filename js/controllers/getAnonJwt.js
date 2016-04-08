@@ -14,6 +14,6 @@ app.controller('getAnonJwt', function($http, $window) {
            console.log("Error, cannot load Anonynous User!");
         });
     }else{
-        console.log(localStorage.getItem("userAnon"));    
+            
     }
 });

@@ -7,7 +7,7 @@ app.controller('loginUser', function($scope, $http, $window) {
             
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/auth',
+                url: 'http://128.199.48.244:3000/auth',
                 headers: {'Content-Type': 'application/json'},
                 data: user
             }).then(function successCallback(response){

@@ -104,9 +104,9 @@ md-backdrop.md-sidenav-backdrop{
 }
 
 /*loginbutton*/
-#loginbutton{
-    z-index:2;
-    position:relative;
+.login{
+    width:50%;
+    height:30px;
 }
 /*add restaurant button*/
 .saveRestaurantButton{
