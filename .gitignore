@@ -1,2 +1,8 @@
+# Framework library 
+libs/lib
+
+# Dependency dir.
+node_modules
+
 
 .DS_Store
