@@ -4,7 +4,7 @@ app.controller('getUserInformation', function($scope, $http) {
     
     $http({
       method: 'GET',
-      url: 'http://localhost:5000/users'
+      url: 'js/json/users.json'
     }).then(function successCallback(response) {
         resultUser(response.data);
     }, function errorCallback(response) {
