@@ -1,8 +1,18 @@
-app.controller('loginController', function($scope, $mdDialog) {
-  $scope.showTabDialog = function(ev) {
+app.controller('templatepopup', function($scope, $mdDialog, $mdMedia) {
+  $scope.showAdvanced = function(ev, id) {
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'pages/templates/tabdialog.tmpl.html',
+      templateUrl: 'pages/templates/'+id+'.tmpl.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:false,
+      fullscreen: useFullScreen
+    })};
+$scope.showTabDialog = function(ev, id) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'pages/templates/'+id+'.tmpl.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true
