@@ -59,7 +59,7 @@ app.controller('addRestaurant', function($scope, $http, $window) {
             console.log(restaurant);
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/restaurants',
+                url: 'http://128.199.48.244:3000/restaurants',
                 headers: {'Content-Type': 'application/json'},
                 data: restaurant
             }).then(function successCallback(response){                
