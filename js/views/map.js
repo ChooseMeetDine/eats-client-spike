@@ -1,31 +1,36 @@
 var map = L.map('map', { zoomControl: false }).locate({setView: true, maxZoom: 13});
+var markers = new L.FeatureGroup();
 
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({position: 'topright'}).addTo(map);
 
-new L.control.locate({position: 'bottomleft'}).addTo(map);
+new L.control.locate({position: 'topright'}).addTo(map);
 
 function onLocationFound(e) {
     var radius = e.accuracy;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/new_design
     L.marker(e.latlng, {icon:redIcon}).addTo(map);
 
     }   
 
-map.on('locationfound', onLocationFound);
-
 function onLocationError(e) {
     alert(e.message);
 }
-//test marker and popup
+
+map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
-var marker = L.marker([55.7597, 13.0074]).addTo(map);
-marker.bindPopup("<b>LÖDDEKÖPINGE!</b>").openPopup();
-var marker = L.marker([57.916, 13.877]).addTo(map);
 
 //costum marker with location
 var greenIcon = L.icon({
-    iconUrl: 'images/marker-icon-coffee-red.png',
+    iconUrl: 'images/icons/marker-icon-coffee-red.png',
+    iconSize:     [25, 41], // size of the icon
+    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
+});
 
+var redIcon = L.icon({
+    iconUrl: 'images/icons/marker-icon-red.png',
     iconSize:     [25, 41], // size of the icon
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 });
@@ -49,6 +54,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 //Function for creating map markers and marker popup from json data
 function placeMarker(json) {
     //console.log(json);
+<<<<<<< HEAD
     for (var key in json) {
 		//one restaurant object containing all restaurant data
         var item = json[key];
@@ -58,3 +64,40 @@ function placeMarker(json) {
         marker = new L.marker([item.lat,item.long]).bindPopup(info).addTo(map);
     }  
 };
+=======
+    for (var key in json) { 
+        var item = json[key];
+        //calls function for rating stars element 
+        var rating = createRatingStars(item.rating);
+        //marker popup info
+        var info = '<p>' + item.name + rating +'</p>' + '<img class="popupimg" src="' + item.photo + '"><br><button class="trigger" id="'+item.id +'">Mer info</button>';
+        
+        
+        if(item.lng != null || item.lat != null) {
+                marker = new L.marker([item.lat,item.lng]).bindPopup(info).addTo(map);
+                markers.addLayer(marker);
+        }
+        else {
+            console.log("trasig latitude eller longitude data");
+        }
+    }  
+};
+
+//Create a star rating image from css based on restaurant 
+//rating value from json data
+function createRatingStars(rating) {
+    var ratingValue = rating;
+    var spanElement = '<span class="rating-static rating-'+ratingValue+'"></span>'
+    return spanElement;
+}
+
+$('#map').on('click', '.trigger', function() {
+    var restId = $(this).attr('id');
+    //console.log(restId);
+    angular.element(document.getElementById('moreInfoMenu')).scope().toggleMoreInfoMenu();
+    angular.element($('#moreInfoSlider')).scope().createInfoScopes(restId);
+});
+
+
+
+>>>>>>> origin/new_design
